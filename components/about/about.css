@@ -1,0 +1,55 @@
+/* À propos */
+.about {
+    background-color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(102, 102, 102, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--navy-blue);
+    border-top: 1px solid rgba(102, 102, 102, 0.1);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 102, 102, 0.25);
+    border-top-color: rgba(102, 102, 102, 0.2);
+}
+
+.about-card h3 {
+    color: var(--navy-blue);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-card ul {
+    list-style: none;
+}
+
+.about-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.about-card ul li strong {
+    color: var(--dark-brown);
+}
+
+.about-card a {
+    color: var(--navy-blue);
+    text-decoration: none;
+}
+
+.about-card a:hover {
+    text-decoration: underline;
+}
+

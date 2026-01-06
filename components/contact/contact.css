@@ -1,0 +1,64 @@
+/* Contact */
+.contact {
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-brown) 100%);
+    color: var(--white);
+}
+
+.contact .section-title {
+    color: var(--white);
+}
+
+.contact .section-title::after {
+    background: var(--white);
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.contact-item a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--light-blue);
+    text-decoration: underline;
+}
+

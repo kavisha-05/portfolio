@@ -1,0 +1,80 @@
+/* Variables de couleurs */
+:root {
+    --dark-brown: #3d2817;
+    --brown: #5d4037;
+    --light-brown: #8d6e63;
+    --navy-blue: #1a237e;
+    --blue: #283593;
+    --light-blue: #3949ab;
+    --white: #ffffff;
+    --cream: #f5f5f0;
+    --text-dark: #2c2c2c;
+    --text-light: #666666;
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--navy-blue);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--navy-blue) 0%, rgba(102, 102, 102, 0.3) 50%, var(--dark-brown) 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(102, 102, 102, 0.2);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

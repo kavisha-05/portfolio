@@ -1,0 +1,95 @@
+/* Annonces */
+.annonces {
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-brown) 100%);
+    color: var(--white);
+}
+
+.annonces .section-title {
+    color: var(--white);
+}
+
+.annonces .section-title::after {
+    background: var(--white);
+}
+
+.annonces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.annonce-card {
+    background-color: var(--white);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(102, 102, 102, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--light-blue);
+    border-right: 1px solid rgba(102, 102, 102, 0.15);
+}
+
+.annonce-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(102, 102, 102, 0.4);
+    border-right-color: rgba(102, 102, 102, 0.25);
+}
+
+.annonce-card h3 {
+    color: var(--navy-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.annonce-type {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-brown) 100%);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.annonce-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.annonce-details {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--navy-blue);
+    border-top: 1px solid rgba(102, 102, 102, 0.1);
+}
+
+.annonce-details p {
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.annonce-details p:last-child {
+    margin-bottom: 0;
+}
+
+.annonce-details strong {
+    color: var(--navy-blue);
+    font-weight: 600;
+}
+
+/* Responsive Annonces */
+@media (max-width: 768px) {
+    .annonces-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

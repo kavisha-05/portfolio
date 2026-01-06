@@ -1,0 +1,114 @@
+/* Formations */
+.formations {
+    background-color: var(--white);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.education-card {
+    background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-brown) 100%);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(102, 102, 102, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(102, 102, 102, 0.2);
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(102, 102, 102, 0.35);
+    border-color: rgba(102, 102, 102, 0.3);
+}
+
+.education-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-school {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--light-blue);
+}
+
+.education-date {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.education-location {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.education-specialty {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.project-section {
+    margin-top: 3rem;
+}
+
+.project-title {
+    font-size: 2rem;
+    color: var(--navy-blue);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.project-card {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(102, 102, 102, 0.15);
+    border-left: 4px solid var(--dark-brown);
+    border-top: 1px solid rgba(102, 102, 102, 0.1);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    transition: box-shadow 0.3s ease, border-top-color 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 25px rgba(102, 102, 102, 0.2);
+    border-top-color: rgba(102, 102, 102, 0.2);
+}
+
+.project-card h4 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-card ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.project-card ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--dark-brown);
+    font-weight: bold;
+}
+
