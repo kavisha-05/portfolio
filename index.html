@@ -1,414 +1,71 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavisha RUBAKANTHAN - Portfolio</title>
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="styles/global.css">
-    <!-- Component Styles -->
-    <link rel="stylesheet" href="components/navbar/navbar.css">
-    <link rel="stylesheet" href="components/hero/hero.css">
-    <link rel="stylesheet" href="components/about/about.css">
-    <link rel="stylesheet" href="components/annonces/annonces.css">
-    <link rel="stylesheet" href="components/experiences/experiences.css">
-    <link rel="stylesheet" href="components/formations/formations.css">
-    <link rel="stylesheet" href="components/competences/competences.css">
-    <link rel="stylesheet" href="components/contact/contact.css">
-    <link rel="stylesheet" href="components/footer/footer.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de Kavisha Rubakanthan, développeuse fullstack et étudiante à l’Efrei. Expériences, projets, compétences et contact.">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>Kavisha Rubakanthan — Développeuse fullstack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">KR</div>
-            <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#annonces">Annonces</a></li>
-                <li><a href="#experiences">Expériences</a></li>
-                <li><a href="#formations">Formations</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="accueil" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Kavisha <span class="highlight">RUBAKANTHAN</span></h1>
-                    <p class="subtitle">Développeuse en devenir | Future Cheffe de Projet | Passionnée par le code</p>
-                    <p class="description">
-                        Bonjour ! Je transforme les idées en lignes de code et les défis en opportunités. 
-                        Actuellement étudiante en Bachelor Ingénierie et Numérique, je navigue entre le développement 
-                        front-end et back-end avec passion. 
-                        Mon objectif ? Maîtriser le développement pour devenir cheffe de projet et créer des solutions 
-                        qui ont du sens. Prête à relever de nouveaux défis !
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Me contacter</a>
-                        <a href="#experiences" class="btn btn-secondary">Voir mes expériences</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="images/photo.png" alt="Kavisha RUBAKANTHAN" class="profile-photo">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a href="#accueil" class="brand" aria-label="Kavisha Rubakanthan, accueil"><span class="brand-mark">kr<span>.</span></span><span class="brand-name">Kavisha<br>Rubakanthan</span></a>
+      <nav aria-label="Navigation principale" class="nav">
+        <a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+    <section class="hero shell" id="accueil" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Développeuse fullstack · Efrei</div>
+        <h1 id="hero-title">Du code, <em>des idées,</em> de l’impact<span class="title-dot">.</span></h1>
+        <p class="hero-description">Bonjour, moi c’est <strong>Kavisha</strong>. Étudiante en informatique, je crée des expériences numériques en réunissant développement, attention aux détails et sens du produit.</p>
+        <div class="actions"><a class="button button-dark" href="#projets">Découvrir mes projets <span aria-hidden="true">↘</span></a><a class="button button-outline" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-meta"><span>Basée en Île-de-France</span><span class="meta-divider"></span><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-frame"><img src="images/photo.png" alt="Portrait de Kavisha Rubakanthan" width="343" height="459"><span class="portrait-index">KR / 01</span></div>
+        <div class="portrait-note"><span class="note-icon" aria-hidden="true">✳</span><span>Curieuse par nature.<br><strong>Créative dans le code.</strong></span></div>
+        <span class="visual-caption">DÉVELOPPEMENT &amp; EXPÉRIENCE UTILISATEUR</span>
+      </div>
     </section>
 
-    <!-- À propos -->
-    <section id="apropos" class="about">
-        <div class="container">
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <h3>Informations personnelles</h3>
-                    <ul>
-                        <li><strong>Âge:</strong> 20 ans</li>
-                        <li><strong>Email:</strong> kavisha.rubakanthan@gmail.com</li>
-                        <li><strong>Téléphone:</strong> 07 61 58 87 01</li>
-                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kavisha-r-2991b427a" target="_blank">@Kavisha Rubakanthan</a></li>
-                        <li><strong>Télétravail:</strong> Non</li>
-                    </ul>
-                </div>
-                <div class="about-card">
-                    <h3>Objectif professionnel</h3>
-                    <p>
-                        Étudiante en deuxième année de Bachelor en Ingénierie et Numérique à l'Efrei, 
-                        avec une année en Bachelor Cybersécurité. Passionnée par le développement web et 
-                        les applications, je cherche d'abord à acquérir des connaissances et maîtriser le développement 
-                        dans le but de devenir cheffe de projet plus tard dans ma carrière.
-                    </p>
-                    <p style="margin-top: 1rem;">
-                        Mon objectif est de mettre en pratique mes compétences dans un environnement professionnel 
-                        pour construire une solide base technique avant d'évoluer vers des responsabilités de management de projet.
-                    </p>
-                </div>
-                
-                <div class="about-card">
-                    <h3>Qualités personnelles</h3>
-                    <p>
-                        Je suis une personne <strong>autonome</strong> avec une <strong>bonne organisation</strong> 
-                        et je sais <strong>m'adapter très vite</strong> à tout type de situation et environnement. 
-                        Ces compétences me permettent de travailler efficacement en équipe comme en autonomie, 
-                        et de m'intégrer rapidement dans de nouveaux contextes professionnels.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <div class="ticker" aria-label="Technologies principales"><div class="shell ticker-inner"><span>QUELQUES OUTILS</span><strong>TypeScript</strong><i>✳</i><strong>Angular</strong><i>✳</i><strong>Node.js</strong><i>✳</i><strong>SQL</strong><i>✳</i><strong>Flutter</strong></div></div>
+
+    <section class="intro section shell" id="apropos" aria-labelledby="intro-title">
+      <div class="section-heading"><span class="section-number">01 / EN QUELQUES MOTS</span><h2 id="intro-title">À la croisée de la <em>technique</em> et de l’humain.</h2></div>
+      <div class="intro-content"><p class="lead">J’aime comprendre un besoin, explorer les possibilités et donner vie à des interfaces utiles.</p><p>De l’intégration front-end aux données et aux services back-end, mes expériences m’ont appris à avancer avec rigueur, curiosité et esprit d’équipe. Je poursuis mon Bachelor Ingénierie et Numérique à l’Efrei, à Villejuif.</p><div class="availability"><span class="availability-icon" aria-hidden="true">↗</span><div><strong>À la recherche d’un stage de fin d’études</strong><p>4 mois, à partir d’avril · Développement fullstack</p></div></div></div>
     </section>
 
-    <!-- Annonces -->
-    <section id="annonces" class="annonces">
-        <div class="container">
-            <h2 class="section-title">Annonces</h2>
-            <div class="annonces-grid">
-                <div class="annonce-card">
-                    <h3>Recherche d'alternance</h3>
-                    <div class="annonce-content">
-                        <p class="annonce-type">Alternance</p>
-                        <p class="annonce-description">
-                            En recherche d'une alternance en présentiel dans le développement web ou application 
-                            (ou bien dans le domaine informatique, numérique en général) pour une période d'une année scolaire 
-                            de septembre 2026 à juin 2027.
-                        </p>
-                        <div class="annonce-details">
-                            <p><strong>Période:</strong> Septembre 2026 - Juin 2027</p>
-                            <p><strong>Type:</strong> Alternance</p>
-                            <p><strong>Mode:</strong> Présentiel</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="annonce-card">
-                    <h3>Recherche de stage</h3>
-                    <div class="annonce-content">
-                        <p class="annonce-type">Stage</p>
-                        <p class="annonce-description">
-                            En recherche d'un stage de 6 semaines en présentiel dans le développement web ou application 
-                            (ou bien dans le domaine informatique, numérique en général) pour une période de 6 semaines 
-                            du 8 juin au 17 juillet.
-                        </p>
-                        <div class="annonce-details">
-                            <p><strong>Période:</strong> 8 juin - 17 juillet</p>
-                            <p><strong>Durée:</strong> 6 semaines</p>
-                            <p><strong>Mode:</strong> Présentiel</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="experience section" id="parcours" aria-labelledby="experience-title">
+      <div class="shell"><div class="heading-row"><div><span class="section-number">02 / PARCOURS</span><h2 id="experience-title">Apprendre <em>en faisant.</em></h2></div><p>Des équipes, des défis et des projets qui ont construit ma pratique.</p></div>
+        <div class="experience-list">
+          <article class="experience-item"><div class="experience-index">01 <span>/ 02</span></div><div class="experience-main"><div class="item-top"><div><p class="item-kicker">STAGE · PARIS</p><h3>Conseil National de l’Ordre des Médecins</h3></div><span class="date-pill">Avr. — juin 2025</span></div><p class="item-intro">Développement au sein de l’équipe Synapse, sur le programme de transformation numérique TENO et l’application Ordinal.</p><ul><li>Conception et correction de composants dynamiques Angular, TypeScript et SCSS à partir de maquettes Figma.</li><li>Analyse de services Spring Boot et requêtes SQL sur une base Oracle pour contrôler les données.</li><li>Suivi de tickets Jira et participation aux merge requests sur GitLab.</li></ul><div class="tags"><span>Angular</span><span>TypeScript</span><span>Spring Boot</span><span>Oracle</span></div></div></article>
+          <article class="experience-item"><div class="experience-index">02 <span>/ 02</span></div><div class="experience-main"><div class="item-top"><div><p class="item-kicker">STAGE · LE BLANC-MESNIL</p><h3>VT Tech</h3></div><span class="date-pill">Juillet 2024</span></div><p class="item-intro">Conception d’une application mobile multiplateforme en Dart avec Flutter.</p><ul><li>Implémentation d’un moteur de recherche dans l’application.</li><li>Intégration de documents PDF interactifs et de leur chargement dynamique.</li></ul><div class="tags"><span>Flutter</span><span>Dart</span><span>Mobile</span></div></div></article>
         </div>
+      </div>
     </section>
 
-    <!-- Expériences professionnelles -->
-    <section id="experiences" class="experiences">
-        <div class="container">
-            <h2 class="section-title">Expériences professionnelles</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Stage: Conseil National de l'Ordre des Médecins</h3>
-                            <span class="timeline-date">Avr. 2025 - Juin 2025</span>
-                        </div>
-                        <p class="timeline-location">Paris</p>
-                        <p class="timeline-role">Développement front-end (Angular, TypeScript, HTML, SCSS)</p>
-                        <ul class="timeline-tasks">
-                            <li>Modification de composants et affichage de données dynamiques</li>
-                            <li>Analyse du back-end Java (lecture) pour comprendre les services</li>
-                            <li>Requêtes SQL sur la base RPPS pour vérifier et adapter les données</li>
-                            <li>Suivi de tickets Jira et participation aux merge requests GitLab</li>
-                            <li>Travail en méthode Agile (daily meetings, sprints)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Stage: VT Tech</h3>
-                            <span class="timeline-date">Juil. 2024</span>
-                        </div>
-                        <p class="timeline-location">Le Blanc-Mesnil</p>
-                        <p class="timeline-role">Développement d'une application mobile Flutter</p>
-                        <ul class="timeline-tasks">
-                            <li>Implémentation d'un moteur de recherche</li>
-                            <li>Intégration d'un lecteur PDF interactif</li>
-                            <li>Optimisation de l'expérience utilisateur</li>
-                            <li>Chargement dynamique des PDF</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section shell projects" id="projets" aria-labelledby="projects-title">
+      <div class="heading-row"><div><span class="section-number">03 / PROJETS</span><h2 id="projects-title">Des idées <em>en pratique.</em></h2></div><p>Deux projets académiques qui illustrent ma curiosité pour le web et les expériences numériques.</p></div>
+      <div class="project-grid">
+        <article class="project-card project-bike"><div class="project-art bike-art" aria-hidden="true"><div class="art-window"><div class="art-bar"><span></span><span></span><span></span></div><div class="bike-copy">MOVE<br><em>forward.</em></div><div class="bike-line">● ───────── ●</div><span class="art-small">E-COMMERCE / INTERFACE</span></div><span class="art-corner">01 ↗</span></div><div class="project-details"><div class="project-meta">PROJET FULLSTACK <span>EN ÉQUIPE</span></div><h3>Une plateforme pour vélos électriques</h3><p>Développement d’une interface responsive et intégration front-end, avec une attention portée à l’expérience utilisateur.</p><div class="tags"><span>JavaScript</span><span>Responsive</span><span>UX</span></div></div></article>
+        <article class="project-card project-stream"><div class="project-art stream-art" aria-hidden="true"><div class="stream-window"><div class="stream-nav"><b>PLAY<span>.</span></b><span>CATALOGUE &nbsp; / &nbsp; MVC</span></div><div class="stream-cards"><span></span><span></span><span></span></div><div class="stream-bottom">LE WEB, CÔTÉ COULISSES <span>↗</span></div></div><span class="art-corner">02 ↗</span></div><div class="project-details"><div class="project-meta">PROJET WEB <span>ARCHITECTURE MVC</span></div><h3>Un site de streaming en PHP</h3><p>Conception d’une architecture MVC en PHP natif et MySQL : sessions, API REST pour le catalogue et simulation d’un parcours de paiement.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>API REST</span></div></div></article>
+      </div>
     </section>
 
-    <!-- Formations -->
-    <section id="formations" class="formations">
-        <div class="container">
-            <h2 class="section-title">Diplômes et Formations</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>Bachelor Ingénierie et Numérique</h3>
-                    <p class="education-school">Efrei</p>
-                    <p class="education-date">Depuis sept. 2024</p>
-                    <p class="education-location">Villejuif</p>
-                </div>
+    <section class="skills section" id="competences" aria-labelledby="skills-title"><div class="shell"><div class="heading-row"><div><span class="section-number">04 / BOÎTE À OUTILS</span><h2 id="skills-title">Ce que j’aime <em>manipuler.</em></h2></div><p>Un ensemble d’outils au service de solutions claires et fonctionnelles.</p></div><div class="skill-groups"><div><span class="skill-no">01</span><h3>Langages</h3><p>TypeScript · JavaScript · Python · Dart · HTML · CSS / SCSS · SQL</p></div><div><span class="skill-no">02</span><h3>Web &amp; frameworks</h3><p>Angular · Node.js · Vue.js · Alpine.js · Flutter · API REST</p></div><div><span class="skill-no">03</span><h3>Données &amp; outils</h3><p>MySQL · Oracle Database · DBeaver · Git · GitLab · Jira</p></div><div><span class="skill-no">04</span><h3>Environnement</h3><p>Unix / Linux · Scripting Shell · Méthode Agile · Figma</p></div></div>
+      <div class="education-row"><div><span class="section-number">FORMATION</span><h3>Une curiosité<br>qui ne s’arrête pas.</h3></div><div class="education-list"><div><p>Bachelor Ingénierie et Numérique <span>Depuis sept. 2024</span></p><small>Efrei · Villejuif</small></div><div><p>Baccalauréat général <span>2023</span></p><small>Lycée Jean Jaurès · Spécialités NSI et mathématiques</small></div><div><p>Anglais <span>Niveau B2</span></p><small>TOEIC blanc : 895</small></div></div></div></div></section>
 
-                <div class="education-card">
-                    <h3>Bachelor Cybersécurité</h3>
-                    <p class="education-school">Epita</p>
-                    <p class="education-date">Sept. 2023 - Juil. 2024</p>
-                    <p class="education-location">Le Kremlin-Bicêtre</p>
-                </div>
-
-                <div class="education-card">
-                    <h3>Baccalauréat général</h3>
-                    <p class="education-school">Lycée Jean Jaurès</p>
-                    <p class="education-date">2023</p>
-                    <p class="education-location">Argenteuil</p>
-                    <p class="education-specialty">Spécialités NSI et Mathématiques</p>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h3 class="project-title">Projets académiques</h3>
-                
-                <div class="project-card">
-                    <h4>Création d'un portfolio</h4>
-                    <p>Développement personnel d'un site web portfolio pour présenter mes compétences et mon parcours.</p>
-                </div>
-
-                <div class="project-card">
-                    <h4>Plateforme en ligne pour vélos électriques</h4>
-                    <p>Développement en équipe d'une plateforme en ligne pour vélos électriques:</p>
-                    <ul>
-                        <li>Conception d'une maquette visuelle du site sur Canva</li>
-                        <li>Développement d'une page web</li>
-                    </ul>
-                </div>
-
-                <div class="project-card">
-                    <h4>Plateforme en ligne d'achat de produits beauté</h4>
-                    <p>Développement individuel d'un site web e-commerce pour l'achat de produits beauté.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="competences" class="competences">
-        <div class="container">
-            <h2 class="section-title">Compétences</h2>
-            <div class="skills-grid">
-                <div class="skills-category">
-                    <h3>Langages de programmation</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">Dart</span>
-                        <span class="skill-tag">Javascript</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">PHP procédural</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Frameworks</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">Alpine.js</span>
-                        <span class="skill-tag">Node.js & APIs</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Systèmes d'exploitation</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Kali Linux</span>
-                        <span class="skill-tag">Linux (en général)</span>
-                        <span class="skill-tag">Unix avancé</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Outils d'entreprise / informatique</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Script Shell</span>
-                        <span class="skill-tag">Github</span>
-                        <span class="skill-tag">GitLab</span>
-                        <span class="skill-tag">Slack</span>
-                        <span class="skill-tag">VSCode</span>
-                        <span class="skill-tag">Trello</span>
-                        <span class="skill-tag">Intellij</span>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">DBeaver</span>
-                        <span class="skill-tag">Vim</span>
-                        <span class="skill-tag">Composer et maker</span>
-                        <span class="skill-tag">Modélisation UML</span>
-                        <span class="skill-tag">Serveur WEB</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Bases de données</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">NoSQL</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Concepts et méthodologies</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Design Pattern MVC</span>
-                        <span class="skill-tag">Clean Code</span>
-                        <span class="skill-tag">Philosophie DevOps et DevSecOps</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="additional-info">
-                <div class="info-card">
-                    <h3>Langues</h3>
-                    <p><strong>Anglais:</strong> Toeic Blanc : 810</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Atouts</h3>
-                    <div class="assets-list">
-                        <span class="asset-tag">Autonome</span>
-                        <span class="asset-tag">Bonne organisation</span>
-                        <span class="asset-tag">Adaptation rapide</span>
-                        <span class="asset-tag">Empathie</span>
-                        <span class="asset-tag">Gestion du stress</span>
-                        <span class="asset-tag">Curiosité</span>
-                        <span class="asset-tag">Audace</span>
-                        <span class="asset-tag">Motivation</span>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3>Centres d'intérêt</h3>
-                    <ul class="interests-list">
-                        <li><strong>Pilate:</strong> Entraînement autonome</li>
-                        <li><strong>Badminton:</strong> En association à l'Efrei</li>
-                        <li><strong>Lecture:</strong> Livres de développement personnel</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>N'hésitez pas à me contacter</h3>
-                    <p>Je suis disponible pour discuter d'opportunités d'alternance ou de projets.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Téléphone:</span>
-                            <a href="tel:0761588701">07 61 58 87 01</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">LinkedIn:</span>
-                            <a href="https://www.linkedin.com/in/kavisha-r-2991b427a" target="_blank">@Kavisha Rubakanthan</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kavisha RUBAKANTHAN. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- Component Scripts -->
-    <script src="components/navbar/navbar.js"></script>
-    <script src="components/hero/hero.js"></script>
-    <script src="components/about/about.js"></script>
-    <script src="components/annonces/annonces.js"></script>
-    <script src="components/experiences/experiences.js"></script>
-    <script src="components/formations/formations.js"></script>
-    <script src="components/competences/competences.js"></script>
-    <script src="components/contact/contact.js"></script>
-    <script src="components/footer/footer.js"></script>
-    <!-- Main Script -->
-    <script src="scripts/main.js"></script>
+    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="shell contact-inner"><div><span class="section-number">05 / CONTACT</span><h2 id="contact-title">Et si on créait<br><em>quelque chose</em> ensemble ?</h2><p>Un stage, un projet ou simplement une idée à partager ? Je serais ravie d’en discuter.</p><a class="button button-light" href="mailto:kavisha.rubakanthan@gmail.com">Écrivez-moi <span aria-hidden="true">↗</span></a></div><div class="contact-aside"><span>RESTONS EN CONTACT</span><a href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com ↗</a><a href="tel:+33761588701">07 61 58 87 01 ↗</a><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><a href="#accueil" class="footer-brand">kr<span>.</span></a><p>© 2026 Kavisha Rubakanthan</p><a href="#accueil">Retour en haut ↑</a></div></footer>
 </body>
 </html>
-
