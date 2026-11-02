@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio de Kavisha Rubakanthan, développeuse fullstack et étudiante à l’Efrei : expériences, projets et compétences.">
-  <meta name="theme-color" content="#173e4a">
-  <title>Kavisha Rubakanthan — Développeuse fullstack</title>
+  <meta name="description" content="Portfolio de Kavisha Rubakanthan, développeuse fullstack et étudiante à l’Efrei : parcours, projets, compétences et contact.">
+  <meta name="theme-color" content="#183f53">
+  <title>Kavisha Rubakanthan — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css">
   <script src="portfolio-interactions.js" defer></script>
 </head>
@@ -16,50 +16,61 @@
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="#accueil">Kavisha Rubakanthan</a>
-      <nav class="nav" aria-label="Navigation principale"><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#contact">Contact</a></nav>
+      <a class="brand" href="#accueil" aria-label="Kavisha Rubakanthan, accueil">KR</a>
+      <nav class="nav" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#annonces">Annonces</a><a href="#experiences">Expériences</a><a href="#formations">Formations</a><a href="#competences">Compétences</a><a href="#contact">Contact</a></nav>
       <a class="header-cv" href="CV-Kavisha-Rubakanthan.pdf" download>Mon CV</a>
     </div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="contenu">
-    <div class="hero-wrap">
-    <section class="hero shell" id="accueil" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="intro-label">Développeuse fullstack · Efrei</p>
-        <h1 id="hero-title">Kavisha<br><mark>Rubakanthan.</mark></h1>
-        <p class="hero-description">Étudiante en informatique à l’Efrei, en Île-de-France, je m’intéresse au développement d’applications et à la création d’interfaces simples et utiles.</p>
-        <div class="hero-actions"><a class="primary-link" href="#parcours">Découvrir mon parcours</a><a class="text-link" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div>
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="shell hero-content">
+        <div class="hero-text">
+          <h1 id="hero-title">Kavisha <mark>Rubakanthan</mark></h1>
+          <p class="subtitle">Développeuse fullstack et étudiante à l’Efrei</p>
+          <p>Bonjour ! Je m’intéresse au développement d’applications web et mobiles, de l’interface utilisateur aux données et aux services back-end. J’aime apprendre, travailler en équipe et donner vie à des projets utiles.</p>
+          <div class="hero-actions"><a class="button button-light" href="#contact">Me contacter</a><a class="button button-outline" href="#experiences">Voir mes expériences</a><a class="hero-cv" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div>
+        </div>
+        <figure class="portrait"><img src="images/photo.png" width="343" height="459" alt="Portrait de Kavisha Rubakanthan"></figure>
       </div>
-      <figure class="portrait"><img src="images/photo.png" width="343" height="459" alt="Portrait de Kavisha Rubakanthan"></figure>
-    </section>
-    </div>
-
-    <div class="availability"><div class="shell availability-inner"><p><strong>En recherche de stage</strong> · Stage de fin d’études de 4 mois à partir d’avril</p><a class="text-link" href="#contact">Me contacter</a></div></div>
-
-    <section class="about section shell section-layout" id="apropos" aria-labelledby="about-title">
-      <h2 id="about-title">À propos</h2>
-      <div class="about-text reveal"><p class="lead">J’aime comprendre un besoin, puis chercher comment le traduire en une <mark>solution concrète</mark>.</p><p>De l’intégration front-end aux données et aux services back-end, mes expériences m’ont appris à travailler avec rigueur, curiosité et esprit d’équipe. Je poursuis un Bachelor Ingénierie et Numérique à l’Efrei, à Villejuif.</p><a class="text-link" href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur LinkedIn</a></div>
     </section>
 
-    <section class="experience section" id="parcours" aria-labelledby="experience-title"><div class="shell section-layout"><h2 id="experience-title">Expériences</h2><div class="section-body">
-      <div class="experience-list">
-        <article class="experience-item reveal"><div class="experience-date"><p>Avril à juin 2025</p><p>Paris</p></div><div><h3>Conseil National de l’Ordre des Médecins</h3><p>Stage au sein de l’équipe Synapse, sur le programme de transformation numérique TENO et l’application Ordinal.</p><ul><li>Conception et correction de composants <mark>Angular, TypeScript et SCSS</mark> à partir de maquettes Figma.</li><li>Analyse de services Spring Boot et requêtes SQL sur une base Oracle pour contrôler les données.</li><li>Suivi de tickets Jira et participation aux merge requests sur GitLab.</li></ul></div></article>
-        <article class="experience-item reveal"><div class="experience-date"><p>Juillet 2024</p><p>Le Blanc-Mesnil</p></div><div><h3>VT Tech</h3><p>Stage consacré à la conception d’une application mobile multiplateforme en <mark>Dart et Flutter</mark>.</p><ul><li>Implémentation d’un moteur de recherche dans l’application.</li><li>Intégration de documents PDF interactifs et de leur chargement dynamique.</li></ul></div></article>
-      </div>
-    </div></div></section>
-
-    <section class="projects section shell section-layout" id="projets" aria-labelledby="projects-title"><h2 id="projects-title">Projets</h2><div class="section-body"><p class="section-intro">Deux projets réalisés pendant ma formation.</p>
-      <div class="project-list"><article class="project-item reveal"><div><p class="project-type">Projet en équipe</p><h3>Plateforme de vélos électriques</h3><p>Développement d’une interface responsive et intégration front-end, avec une attention portée à l’expérience utilisateur.</p><p class="technologies">JavaScript · Responsive · UX</p></div></article>
-      <article class="project-item reveal"><div><p class="project-type">Projet web</p><h3>Site de streaming en PHP</h3><p>Conception d’une architecture MVC en PHP natif et MySQL : sessions, API REST pour le catalogue et simulation d’un parcours de paiement.</p><p class="technologies">PHP · MySQL · API REST</p></div></article></div>
+    <section class="section about" id="apropos" aria-labelledby="about-title"><div class="shell">
+      <h2 class="section-title" id="about-title">À propos de moi</h2>
+      <div class="about-content reveal"><div><h3>Mon parcours</h3><p>Je poursuis un Bachelor Ingénierie et Numérique à l’Efrei, à Villejuif, après une année en Bachelor Cybersécurité à l’Epita. Mes expériences m’ont permis de découvrir le développement web et mobile dans des contextes professionnels.</p></div><div><h3>Mon objectif</h3><p>Je souhaite continuer à renforcer mes compétences en <mark>développement fullstack</mark>, tout en cultivant mon sens du produit et du travail en équipe. À terme, j’aimerais également évoluer vers la gestion de projet.</p><a class="text-link" href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur LinkedIn</a></div></div>
     </div></section>
 
-    <section class="skills section" id="competences" aria-labelledby="skills-title"><div class="shell section-layout"><h2 id="skills-title">Compétences</h2><div class="section-body"><div class="skill-grid"><div class="skill-item reveal"><h3>Langages</h3><p>TypeScript, JavaScript, Python, Dart, HTML, CSS / SCSS, SQL</p></div><div class="skill-item reveal"><h3>Web et frameworks</h3><p>Angular, Node.js, Vue.js, Alpine.js, Flutter, API REST</p></div><div class="skill-item reveal"><h3>Données et outils</h3><p>MySQL, Oracle Database, DBeaver, Git, GitLab, Jira</p></div><div class="skill-item reveal"><h3>Environnement</h3><p>Unix / Linux, scripting Shell, méthode Agile, Figma</p></div></div>
-      <div class="education reveal"><h3>Formation et langue</h3><div class="education-list"><div><p><strong>Bachelor Ingénierie et Numérique</strong></p><p>Efrei, Villejuif · Depuis septembre 2024</p></div><div><p><strong>Baccalauréat général</strong></p><p>Lycée Jean Jaurès · Spécialités NSI et mathématiques · 2023</p></div><div><p><strong>Anglais : niveau B2</strong></p><p>TOEIC blanc : 895</p></div></div></div>
-    </div></div></section>
+    <section class="section announcements" id="annonces" aria-labelledby="annonces-title"><div class="shell">
+      <h2 class="section-title" id="annonces-title">Annonces</h2>
+      <div class="announcement-content reveal"><div><h3>Recherche de stage</h3><p>Je recherche un stage de fin d’études en développement fullstack pour participer à la création d’applications et continuer à apprendre au sein d’une équipe.</p></div><div class="announcement-details"><p><strong>Durée :</strong> 4 mois</p><p><strong>Disponibilité :</strong> à partir d’avril</p><a class="text-link" href="#contact">Me contacter</a></div></div>
+    </div></section>
 
-    <section class="contact section" id="contact" aria-labelledby="contact-title"><div class="shell section-layout"><h2 id="contact-title">Contact</h2><div class="contact-inner reveal"><div><p class="lead">Vous cherchez une stagiaire en développement ou souhaitez échanger ?</p><p>Je serais ravie de vous lire.</p><a class="contact-email" href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a></div><div class="contact-links"><a href="tel:+33761588701">07 61 58 87 01</a><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div></div></div></section>
+    <section class="section experiences" id="experiences" aria-labelledby="experiences-title"><div class="shell">
+      <h2 class="section-title" id="experiences-title">Expériences professionnelles</h2>
+      <div class="timeline">
+        <article class="timeline-item reveal"><div class="timeline-date"><p><strong>Avril à juin 2025</strong></p><p>Paris</p></div><div><h3>Conseil National de l’Ordre des Médecins</h3><p>Stage au sein de l’équipe Synapse, sur le programme de transformation numérique TENO et l’application Ordinal.</p><ul><li>Conception et correction de composants <mark>Angular, TypeScript et SCSS</mark> à partir de maquettes Figma.</li><li>Analyse de services Spring Boot et requêtes SQL sur une base Oracle pour contrôler les données.</li><li>Suivi de tickets Jira et participation aux merge requests sur GitLab.</li></ul></div></article>
+        <article class="timeline-item reveal"><div class="timeline-date"><p><strong>Juillet 2024</strong></p><p>Le Blanc-Mesnil</p></div><div><h3>VT Tech</h3><p>Stage consacré à la conception d’une application mobile multiplateforme en <mark>Dart et Flutter</mark>.</p><ul><li>Implémentation d’un moteur de recherche dans l’application.</li><li>Intégration de documents PDF interactifs et de leur chargement dynamique.</li></ul></div></article>
+      </div>
+    </div></section>
+
+    <section class="section formations" id="formations" aria-labelledby="formations-title"><div class="shell">
+      <h2 class="section-title" id="formations-title">Diplômes et formations</h2>
+      <div class="education-grid"><article class="education-item reveal"><h3>Bachelor Ingénierie et Numérique</h3><p><strong>Efrei</strong> · Villejuif</p><p>Depuis septembre 2024</p></article><article class="education-item reveal"><h3>Bachelor Cybersécurité</h3><p><strong>Epita</strong> · Le Kremlin-Bicêtre</p><p>Une année, de septembre 2023 à juillet 2024</p></article><article class="education-item reveal"><h3>Baccalauréat général</h3><p><strong>Lycée Jean Jaurès</strong> · Argenteuil</p><p>2023 · Spécialités NSI et mathématiques</p></article></div>
+      <div class="project-section" id="projets"><h3 class="project-heading">Projets académiques</h3><div class="project-grid"><article class="project-item reveal"><h3>Plateforme de vélos électriques</h3><p>Développement en équipe d’une interface responsive, avec une attention portée à l’expérience utilisateur.</p><p class="technologies">JavaScript · Responsive · UX</p></article><article class="project-item reveal"><h3>Site de streaming en PHP</h3><p>Architecture MVC en PHP natif et MySQL : sessions, API REST pour le catalogue et simulation d’un parcours de paiement.</p><p class="technologies">PHP · MySQL · API REST</p></article><article class="project-item reveal"><h3>Site de produits beauté</h3><p>Développement individuel d’un site web e-commerce consacré à l’achat de produits beauté.</p></article></div></div>
+    </div></section>
+
+    <section class="section skills" id="competences" aria-labelledby="competences-title"><div class="shell">
+      <h2 class="section-title" id="competences-title">Compétences</h2>
+      <div class="skills-grid"><div class="skill-item reveal"><h3>Langages</h3><p>TypeScript, JavaScript, Python, Dart, HTML, CSS / SCSS, SQL</p></div><div class="skill-item reveal"><h3>Web et frameworks</h3><p>Angular, Node.js, Vue.js, Alpine.js, Flutter, API REST</p></div><div class="skill-item reveal"><h3>Données et outils</h3><p>MySQL, Oracle Database, DBeaver, Git, GitLab, Jira</p></div><div class="skill-item reveal"><h3>Environnement</h3><p>Unix / Linux, scripting Shell, méthode Agile, Figma</p></div></div>
+      <div class="additional-info reveal"><div><h3>Langues</h3><p>Anglais : niveau B2 · TOEIC blanc : 895</p></div><div><h3>Centres d’intérêt</h3><p>Pilates, badminton à l’Efrei et lecture de livres de développement personnel.</p></div></div>
+    </div></section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="shell contact-content reveal">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <p class="contact-intro">Vous cherchez une stagiaire en développement ou souhaitez échanger ? Je serais ravie de vous lire.</p>
+      <div class="contact-details"><a href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a><a href="tel:+33761588701">07 61 58 87 01</a><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div>
+    </div></section>
   </main>
   <footer class="footer"><div class="shell footer-inner"><p>© 2026 Kavisha Rubakanthan</p><a href="#accueil">Retour en haut</a></div></footer>
 </body>
