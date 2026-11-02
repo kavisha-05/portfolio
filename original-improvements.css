@@ -14,8 +14,8 @@ section[id] { scroll-margin-top: calc(var(--navbar-height, 78px) + .75rem); }
 .btn-cv { color: #fff; border: 2px solid #fff; }
 .btn-cv:hover { background: #fff; color: var(--navy-blue); }
 .image-container { width: min(300px, 100%); height: auto; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
-.profile-photo { width: 100%; height: auto; object-fit: unset; filter: grayscale(.8) contrast(1.04); -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 15%, #000 80%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 15%, #000 80%, transparent); mask-composite: intersect; transition: filter .5s ease; }
-.profile-photo:hover { filter: grayscale(.1) contrast(1.02); }
+.profile-photo { width: 100%; height: auto; object-fit: unset; filter: brightness(1.15) saturate(1.04); -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 5%, #000 88%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 5%, #000 88%, transparent); mask-composite: intersect; transition: filter .35s ease, transform .35s ease; }
+.profile-photo:hover { filter: brightness(1.2) saturate(1.08); transform: scale(1.015); }
 .hamburger { border: 0; padding: .35rem; background: transparent; }
 .nav-menu[hidden] { display: none !important; }
 .nav-menu a.active::after { width: 100%; }
