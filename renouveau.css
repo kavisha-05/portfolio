@@ -240,3 +240,18 @@ a:focus-visible,button:focus-visible { outline:3px solid #aebeff; outline-offset
 @keyframes halo-breathe { to { transform:scale(1.12) rotate(12deg); opacity:.6; } }
 @keyframes beacon { 70%,100% { box-shadow:0 0 0 9px rgba(159,227,212,0); } }
 @media (prefers-reduced-motion:reduce) { .hero::after,.hero-availability span { animation:none; } }
+
+/* Le contenu reste lisible même avant l'animation d'apparition. */
+.will-reveal { opacity:1; transform:none; }
+.will-reveal.is-visible { animation:section-arrive .65s ease both; }
+.project-preview { display:block; position:relative; overflow:hidden; margin:-1.8rem -1.8rem 1.5rem; aspect-ratio:16/9; background:#0b1426; border-bottom:1px solid rgba(176,225,226,.32); }
+.project-preview img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .6s ease; }
+.project-preview:hover img { transform:scale(1.035); filter:brightness(1.1); }
+.project-preview::after { content:''; position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 35px rgba(6,18,30,.2); }
+.hero-grid { animation-duration:9s; }
+.orbit-outer { box-shadow:0 0 24px rgba(148,226,222,.14), inset 0 0 20px rgba(148,226,222,.1); }
+.code-console { transform:perspective(1000px) rotateY(-3deg); }
+.project-card { box-shadow:0 12px 35px rgba(2,10,25,.18); }
+.projects .section-heading h2::after { background:linear-gradient(90deg,#b3f4ed,#5db6cc,#e6ab9a); box-shadow:0 0 18px rgba(116,219,219,.45); }
+@keyframes section-arrive { from { transform:translateY(12px); } to { transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) { .will-reveal.is-visible { animation:none; } }
