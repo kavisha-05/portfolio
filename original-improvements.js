@@ -5,6 +5,22 @@
   if (!navbar || !menu || !toggle) return;
   document.body.classList.add('js-enabled');
   const mobile = window.matchMedia('(max-width: 768px)');
+  const progress = document.querySelector('.scroll-progress span');
+  let scrollQueued = false;
+  function updateProgress() {
+    const distance = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+    if (progress) progress.style.setProperty('--scroll-progress', ratio.toFixed(4));
+    scrollQueued = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!scrollQueued) {
+      window.requestAnimationFrame(updateProgress);
+      scrollQueued = true;
+    }
+  }, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
 
   function closeMenu() {
     menu.classList.remove('active');
