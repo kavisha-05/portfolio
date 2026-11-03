@@ -16,22 +16,41 @@
   const cartCount = document.querySelector('#cart-count');
   const cartItems = document.querySelector('#cart-items');
   const cartEmpty = document.querySelector('#cart-empty');
-  search.value = new URLSearchParams(location.search).get('search') || '';
+  const parameters = new URLSearchParams(location.search);
+  search.value = parameters.get('search') || '';
   let selectedGenre = 'Tous';
   let currentFilm = null;
   let cart = [];
+  const plans = { 'standard-ads': { title: 'Standard avec pub', price: 7.99 }, standard: { title: 'Standard', price: 14.99 }, premium: { title: 'Premium', price: 21.99 } };
+  let savedPlan = null;
+  try { savedPlan = localStorage.getItem('portfolio-streamflix-demo-plan'); } catch {}
+  const selectedPlan = parameters.get('plan') || savedPlan;
+  let plan = plans[selectedPlan] || null;
+  if (plan && parameters.has('plan')) { try { localStorage.setItem('portfolio-streamflix-demo-plan', selectedPlan); } catch {} }
+  const clearPlan = () => { plan = null; try { localStorage.removeItem('portfolio-streamflix-demo-plan'); } catch {} };
+  const formatPrice = value => `${value.toFixed(2).replace('.', ',')} €`;
   try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); cart = Array.isArray(saved) ? saved.filter(id => films.some(film => film.id === id)) : []; } catch { cart = []; }
   const persist = () => { try { localStorage.setItem(storageKey, JSON.stringify(cart)); } catch {} };
   function updateCart() {
-    cartCount.textContent = String(cart.length);
+    cartCount.textContent = String(cart.length + (plan ? 1 : 0));
     cartItems.replaceChildren();
-    cartEmpty.hidden = cart.length > 0;
-    document.querySelector('#clear-cart').hidden = cart.length === 0;
+    cartEmpty.hidden = cart.length > 0 || !!plan;
+    document.querySelector('#clear-cart').hidden = cart.length === 0 && !plan;
+    document.querySelector('#checkout').hidden = cart.length === 0 && !plan;
+    const total = cart.length * 3.99 + (plan?.price || 0);
+    document.querySelector('#cart-total').textContent = total ? `Total fictif : ${formatPrice(total)}` : '';
+    if (plan) {
+      const item = document.createElement('li');
+      const title = document.createElement('span'); title.textContent = `Abonnement ${plan.title} · ${formatPrice(plan.price)}`;
+      const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = 'Retirer';
+      remove.addEventListener('click', () => { clearPlan(); updateCart(); });
+      item.append(title, remove); cartItems.append(item);
+    }
     cart.forEach(id => {
       const film = films.find(item => item.id === id);
       if (!film) return;
       const item = document.createElement('li');
-      const title = document.createElement('span'); title.textContent = film.title;
+      const title = document.createElement('span'); title.textContent = `${film.title} · ${formatPrice(3.99)}`;
       const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = 'Retirer';
       remove.setAttribute('aria-label', `Retirer ${film.title} du panier de démonstration`);
       remove.addEventListener('click', () => { cart = cart.filter(value => value !== id); persist(); updateCart(); });
@@ -44,6 +63,7 @@
     document.querySelector('#movie-dialog-genre').textContent = film.genre;
     document.querySelector('#movie-dialog-meta').textContent = film.duration;
     document.querySelector('#movie-dialog-description').textContent = film.description;
+    document.querySelector('#film-page-link').href = `film.html?film=${encodeURIComponent(film.title)}`;
     document.querySelector('#cart-message').textContent = '';
     movieDialog.showModal();
   }
@@ -55,7 +75,7 @@
     if (!filtered.length) { const empty = document.createElement('p'); empty.className = 'empty-state'; empty.textContent = 'Aucun film ne correspond à votre recherche.'; grid.append(empty); return; }
     filtered.forEach(film => {
       const article = document.createElement('article'); article.className = 'movie-card';
-      const art = document.createElement('div'); art.className = 'movie-art'; art.style.setProperty('--poster-a', film.colors[0]); art.style.setProperty('--poster-b', film.colors[1]);
+      const art = document.createElement('div'); art.className = 'movie-art'; art.style.setProperty('--poster-a', film.colors[0]); art.style.setProperty('--poster-b', film.colors[1]); art.style.backgroundImage = `linear-gradient(transparent, rgba(9,10,18,.9)), url('mock/film-${films.indexOf(film)+1}.jpg')`; art.style.backgroundSize = 'cover'; art.style.backgroundPosition = 'center';
       const artTitle = document.createElement('strong'); artTitle.textContent = film.title; art.append(artTitle);
       const body = document.createElement('div'); body.className = 'movie-body';
       const meta = document.createElement('p'); meta.textContent = `${film.genre} · ${film.duration}`;
@@ -75,7 +95,14 @@
     document.querySelector('#cart-message').textContent = 'Ajouté au panier de démonstration.';
   });
   document.querySelector('#open-cart').addEventListener('click', () => { updateCart(); cartDialog.showModal(); });
-  document.querySelector('#clear-cart').addEventListener('click', () => { cart = []; persist(); updateCart(); });
+  document.querySelector('#clear-cart').addEventListener('click', () => { cart = []; clearPlan(); persist(); updateCart(); });
+  document.querySelector('#checkout').addEventListener('click', () => {
+    location.href = 'paiement.html';
+  });
   document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
   updateCart(); renderFilms();
+  if (parameters.has('plan') || parameters.has('panier')) cartDialog.showModal();
+  const selected = films.find(film => film.title === parameters.get('film'));
+  if (selected && !plan) openFilm(selected);
+  if (parameters.has('plan') || parameters.has('film') || parameters.has('panier')) history.replaceState(null, '', location.pathname + location.hash);
 })();

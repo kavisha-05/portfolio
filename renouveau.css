@@ -255,3 +255,43 @@ a:focus-visible,button:focus-visible { outline:3px solid #aebeff; outline-offset
 .projects .section-heading h2::after { background:linear-gradient(90deg,#b3f4ed,#5db6cc,#e6ab9a); box-shadow:0 0 18px rgba(116,219,219,.45); }
 @keyframes section-arrive { from { transform:translateY(12px); } to { transform:translateY(0); } }
 @media (prefers-reduced-motion:reduce) { .will-reveal.is-visible { animation:none; } }
+
+/* Parcours interactif : des couleurs franches et des surfaces qui mettent les textes en valeur. */
+body { background:#f6f3ed; }
+.hero { background:radial-gradient(ellipse at 77% 26%,#35657b 0,transparent 40%),linear-gradient(120deg,#141c3c,#263f62 62%,#72555c); }
+.about { background:#f8f5ef; }
+.about-lead { padding:2rem; color:#f9faff; background:#243b60; border-radius:4px 38px 4px 38px; box-shadow:10px 10px 0 #c5e7dd; }
+.about-copy { padding:1.8rem 2rem; color:#26374b; background:#fff; border:1px solid #dce3e1; box-shadow:0 16px 45px rgba(23,42,57,.07); }
+.discovery-game { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-top:5rem; padding:2.5rem; color:#16283d; background:#c5e8dc; border-radius:4px 45px 4px 45px; position:relative; overflow:hidden; }
+.discovery-game[hidden] { display:none; }
+.discovery-game::after { content:'✦'; position:absolute; right:1.2rem; top:-1rem; font-size:2.5rem; color:#507e93; animation:game-spark 4s ease-in-out infinite; pointer-events:none; }
+.discovery-game h2 { color:#16283d; margin-bottom:.6rem; }
+.game-label { color:#365f72; font-weight:700; margin:0 0 .4rem; }
+.game-status { font-weight:700; margin-bottom:.5rem; }
+.game-meter { height:6px; width:min(100%,17rem); background:rgba(35,70,80,.2); border-radius:5px; overflow:hidden; }
+.game-meter span { display:block; height:100%; width:0; background:#285f75; transition:width .45s ease; }
+.game-links { display:grid; gap:.65rem; position:relative; z-index:1; }
+.game-links a { padding:.75rem 1rem; color:#fff; background:#28415c; border:1px solid transparent; font-weight:600; transition:transform .2s,background .2s; }
+.game-links a:hover,.game-links a:focus-visible { transform:translateX(6px); background:#9a5964; }
+.game-links a.is-done { background:#416e63; }
+.game-links a.is-done::after { content:' ✓'; }
+.experiences { background:#e7eef1; }
+.experience-item { margin:1rem 0; padding:1.6rem 1.8rem; background:#fff; border:1px solid #cbdbe1; border-left:5px solid #74b5b3; border-radius:3px 25px 3px 25px; box-shadow:0 8px 25px rgba(27,51,66,.05); }
+.experience-item:hover { padding-left:2.1rem; background:#fff; }
+.project-grid { align-items:stretch; }
+.project-card { background:#203a50; border:1px solid #739d9e; border-radius:3px 32px 3px 32px; }
+.project-card:nth-child(2) { background:#3a304a; border-color:#ad9eb6; }
+.project-card:nth-child(3) { background:#564047; border-color:#d2ada7; }
+.project-card > p:not(.project-type):not(.project-tech) { color:#f0f5f6; }
+.project-tech,.project-card .project-note { color:#dae7e8; }
+.skills { background:#f2e9e5; }
+.skill-grid { gap:1rem; border:0; }
+.skill-item { padding:1.7rem; background:#fff; border:1px solid #e1d2cc; border-radius:3px 25px 3px 25px; }
+.skill-item:nth-child(2),.skill-item:nth-child(3) { background:#ddece8; border-color:#c4ddd7; }
+.education { background:#faf8f3; }
+.education-grid { gap:1rem; border:0; }
+.education-item,.education-item + .education-item { padding:1.6rem; background:#e1edec; border:0; border-radius:3px 25px 3px 25px; }
+.education-item:nth-child(even) { background:#f3e3de; }
+@keyframes game-spark { 50% { transform:rotate(35deg) scale(1.15); } }
+@media(max-width:680px) { .discovery-game { grid-template-columns:1fr; gap:1.5rem; padding:1.6rem; margin-top:3rem; }.about-copy,.about-lead { padding:1.5rem; }.experience-item { padding:1.4rem; }.experience-item:hover { padding-left:1.4rem; }.skill-grid,.education-grid { gap:1rem; }.education-item,.education-item + .education-item { padding:1.4rem; border:0; } }
+@media(prefers-reduced-motion:reduce) { .discovery-game::after { animation:none; } }
