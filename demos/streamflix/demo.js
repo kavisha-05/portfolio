@@ -16,6 +16,7 @@
   const cartCount = document.querySelector('#cart-count');
   const cartItems = document.querySelector('#cart-items');
   const cartEmpty = document.querySelector('#cart-empty');
+  search.value = new URLSearchParams(location.search).get('search') || '';
   let selectedGenre = 'Tous';
   let currentFilm = null;
   let cart = [];

@@ -1,0 +1,4 @@
+function scrollSection(sectionId,direction){const section=document.getElementById(sectionId==='top10'?'top10':sectionId+'-carousel');if(section)section.scrollBy({left:direction*450,behavior:'smooth'});}
+function changeHeroMovie(index,movie){const title=document.querySelector('.hero-title');const description=document.querySelector('.hero-overview');if(title)title.textContent=movie.title||'';if(description)description.textContent=movie.overview||'';document.querySelectorAll('.hero-thumbnail').forEach((item,i)=>item.classList.toggle('active',i===index));}
+function selectPlan(){alert('Aperçu uniquement : aucun abonnement ni paiement réel.');}
+document.addEventListener('DOMContentLoaded',()=>{const search=document.getElementById('search-input');if(search)search.addEventListener('keydown',event=>{if(event.key==='Enter'){location.href='catalogue.html?search='+encodeURIComponent(search.value)+'#catalogue';}});});
