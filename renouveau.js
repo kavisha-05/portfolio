@@ -46,6 +46,20 @@
   window.addEventListener('resize', updateScroll, { passive: true });
   updateScroll();
 
+  const hero = document.querySelector('.hero');
+  if (hero && !motion.matches && window.matchMedia('(pointer: fine)').matches) {
+    let frame = 0;
+    hero.addEventListener('pointermove', event => {
+      if (frame) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const bounds = hero.getBoundingClientRect();
+        hero.style.setProperty('--glow-x', `${((event.clientX - bounds.left) / bounds.width * 100).toFixed(1)}%`);
+        hero.style.setProperty('--glow-y', `${((event.clientY - bounds.top) / bounds.height * 100).toFixed(1)}%`);
+        frame = 0;
+      });
+    }, { passive: true });
+  }
+
   if (!('IntersectionObserver' in window)) return;
   const links = [...menu.querySelectorAll('a[href^="#"]')];
   const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
