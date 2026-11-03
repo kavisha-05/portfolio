@@ -21,4 +21,5 @@
     try { localStorage.setItem('portfolio-streamflix-demo-cart', JSON.stringify(cart)); } catch {}
     document.querySelector('#film-status').textContent = 'Film ajouté au panier de démonstration.';
   });
+  document.querySelector('#buy-film').disabled = false;
 })();
