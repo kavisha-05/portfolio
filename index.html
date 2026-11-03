@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="renouveau.css?v=20261103c">
+  <link rel="stylesheet" href="renouveau.css?v=20261103d">
   <script src="renouveau.js?v=20261103b" defer></script>
   <script src="exploration.js" defer></script>
+  <script src="stack-game.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -33,7 +34,7 @@
           <h1 id="hero-title">Kavisha<br><mark>Rubakanthan</mark></h1>
           <p class="hero-role">Développeuse web · Licence informatique à l’Efrei</p>
           <p class="hero-description">Étudiante en troisième année de licence informatique, je développe des applications web, de l’interface utilisateur aux services et aux données.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#projets">Découvrir mes projets</a><a class="button button-secondary" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div>
+          <div class="hero-actions"><a class="button button-primary" href="#projets">Découvrir mes projets</a><a class="button button-secondary" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a><a class="button button-play" href="#defi" hidden>Jouer au défi</a></div>
           <p class="hero-availability"><span aria-hidden="true"></span>Stage de fin d’études · 4 mois à partir d’avril</p>
         </div>
         <div class="hero-visual">
@@ -47,6 +48,18 @@
     </section>
 
     <section class="about section" id="apropos" aria-labelledby="about-title"><div class="shell"><div class="section-heading reveal"><p class="section-kicker">À propos</p><h2 id="about-title">Du développement, <mark>avec curiosité.</mark></h2></div><div class="about-layout"><p class="about-lead reveal">En troisième année de licence informatique à l’Efrei, j’allie développement web et sensibilité produit.</p><div class="about-copy reveal"><p>Rigoureuse et curieuse, j’aime comprendre un besoin, travailler en équipe et contribuer à la création d’applications utiles. Mon échange académique à APU, en Malaisie, m’a permis de découvrir un autre environnement d’études.</p><p>Je recherche un stage de fin d’études de quatre mois à partir d’avril, dans le développement d’applications SaaS.</p><p><strong>Atouts :</strong> empathie, gestion du stress, curiosité, audace et motivation.</p><a class="text-link" href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur LinkedIn</a></div></div><div class="discovery-game" hidden><div><p class="game-label">À vous de jouer</p><h2>On explore ?</h2><p>Découvrez trois facettes de mon parcours et complétez votre visite.</p><p class="game-status" role="status" aria-live="polite">0 découverte sur 3</p><div class="game-meter" aria-hidden="true"><span></span></div></div><div class="game-links"><a href="#experiences" data-discovery="experience">Découvrir mon expérience</a><a href="#projets" data-discovery="projects">Explorer mes projets</a><a href="#competences" data-discovery="skills">Voir mes compétences</a></div></div></div></section>
+
+    <section class="arcade-section section" id="defi" aria-labelledby="arcade-title" hidden>
+      <div class="shell arcade-layout">
+        <div class="arcade-intro"><p class="arcade-kicker">Pause créative</p><h2 id="arcade-title">À toi de <mark>coder !</mark></h2><p>Relève un petit défi : choisis les bons outils pour donner vie à une application web.</p><p>Trois choix, une application, et un aperçu de mon univers de développeuse.</p></div>
+        <div class="arcade-console">
+          <div class="arcade-top"><span>Le défi de la stack</span><span class="arcade-score" aria-live="polite">0 / 3</span></div>
+          <div class="arcade-progress" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="arcade-body"><p class="arcade-step">Prêt à jouer ?</p><h3 class="arcade-question">Construisons une application web.</h3><p class="arcade-feedback" role="status" aria-live="polite">Choisis une réponse pour commencer.</p><div class="arcade-options" aria-label="Choisir une technologie"><button type="button" data-choice="angular">Angular</button><button type="button" data-choice="node">Node.js</button><button type="button" data-choice="mysql">MySQL</button></div><div class="arcade-actions"><button type="button" class="arcade-restart" hidden>Rejouer</button><a href="#projets" class="arcade-projects" hidden>Découvrir mes projets</a></div></div>
+          <div class="arcade-celebration" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div>
+        </div>
+      </div>
+    </section>
 
     <section class="experiences section" id="experiences" aria-labelledby="experiences-title"><div class="shell"><div class="section-heading reveal"><p class="section-kicker">Mon parcours</p><h2 id="experiences-title">Expériences professionnelles</h2></div><div class="timeline">
       <article class="experience-item reveal"><div class="experience-date"><p>À partir du 15 juin 2026</p><p>Six semaines</p></div><div><h3>RK Supermarket</h3><p>Conception d’un prototype de click &amp; collect pour faciliter les commandes d’une épicerie de quartier.</p><ul><li>Catalogue avec recherche et promotions, panier et choix d’un créneau de retrait.</li><li>Espace de gestion : produits, prix, stocks et alertes de réapprovisionnement.</li><li>Suivi des commandes de leur préparation à leur retrait, avec impression des tickets de commande.</li><li>Développement avec Vue.js, Node.js, Express et MySQL.</li></ul><a class="experience-link" href="/demos/rk/">Découvrir le prototype</a></div></article>

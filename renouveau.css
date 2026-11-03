@@ -295,3 +295,44 @@ body { background:#f6f3ed; }
 @keyframes game-spark { 50% { transform:rotate(35deg) scale(1.15); } }
 @media(max-width:680px) { .discovery-game { grid-template-columns:1fr; gap:1.5rem; padding:1.6rem; margin-top:3rem; }.about-copy,.about-lead { padding:1.5rem; }.experience-item { padding:1.4rem; }.experience-item:hover { padding-left:1.4rem; }.skill-grid,.education-grid { gap:1rem; }.education-item,.education-item + .education-item { padding:1.4rem; border:0; } }
 @media(prefers-reduced-motion:reduce) { .discovery-game::after { animation:none; } }
+
+/* Un vrai mini-jeu, directement dans le parcours. */
+.button-play { color:#e3f6ed; border:1px dashed #9de1d8; background:rgba(67,122,132,.2); }
+.button-play:hover { color:#132e3e; background:#c6eee5; border-color:#c6eee5; }
+.button-play[hidden],.arcade-section[hidden],.arcade-options[hidden],.arcade-restart[hidden],.arcade-projects[hidden] { display:none; }
+.arcade-section { position:relative; overflow:hidden; background:#182a47; color:#f6fafb; }
+.arcade-section::before { content:''; position:absolute; inset:0; opacity:.23; background-image:radial-gradient(#9edbd8 1px,transparent 1px); background-size:28px 28px; pointer-events:none; }
+.arcade-layout { position:relative; display:grid; grid-template-columns:.8fr 1.2fr; gap:4rem; align-items:center; }
+.arcade-intro { position:relative; max-width:420px; }
+.arcade-intro::before { content:'{ }'; display:block; width:fit-content; margin-bottom:1.2rem; padding:.4rem .85rem; color:#1c3e50; background:#b7e9dd; font-size:1.25rem; font-weight:700; transform:rotate(-6deg); box-shadow:4px 4px 0 #dbafa6; }
+.arcade-kicker { color:#b3e9df; font-weight:700; margin-bottom:.7rem; }
+.arcade-intro h2 { color:#fff; margin-bottom:1rem; }
+.arcade-intro h2 mark { color:#c9f2e9; background:linear-gradient(transparent 66%,rgba(163,225,215,.2) 66%); }
+.arcade-intro p:not(.arcade-kicker) { color:#dce9ee; }
+.arcade-console { position:relative; background:#fbfaf6; color:#203450; border:2px solid #b9e8df; border-radius:4px 32px 4px 32px; box-shadow:12px 12px 0 #d5a8a5,0 22px 50px rgba(3,12,26,.24); }
+.arcade-top { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.4rem; color:#fff; background:#284360; border-radius:2px 29px 0 0; font-weight:700; }
+.arcade-score { color:#c0f1e4; white-space:nowrap; }
+.arcade-progress { display:grid; grid-template-columns:repeat(3,1fr); gap:.45rem; padding:1.2rem 1.4rem 0; }
+.arcade-progress span { height:7px; background:#dce8e6; border-radius:5px; transition:background .3s; }
+.arcade-progress span.is-complete { background:#449d8d; }
+.arcade-body { padding:1.4rem; }
+.arcade-step { margin-bottom:.5rem; color:#446b79; font-weight:700; }
+.arcade-question { margin-bottom:.65rem; color:#203450; }
+.arcade-feedback { min-height:3.4em; color:#445a6c; margin-bottom:1rem; }
+.arcade-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; }
+.arcade-options button,.arcade-restart,.arcade-projects { min-width:0; padding:.8rem .5rem; border:2px solid #8dbdb8; border-radius:3px 15px 3px 15px; background:#e6f4ed; color:#23435a; font:inherit; font-weight:700; text-align:center; cursor:pointer; transition:transform .2s,background .2s,border-color .2s; }
+.arcade-options button:nth-child(2) { background:#f7e9e1; border-color:#d5a9a1; }
+.arcade-options button:nth-child(3) { background:#e9e7f4; border-color:#aaa5ca; }
+.arcade-options button:hover,.arcade-restart:hover,.arcade-projects:hover { transform:translateY(-4px); border-color:#365f79; }
+.arcade-options button.is-miss { animation:game-wiggle .35s ease; }
+.arcade-actions { display:flex; flex-wrap:wrap; gap:.7rem; }
+.arcade-restart,.arcade-projects { display:inline-block; padding:.7rem 1rem; }
+.arcade-projects { color:#fff; background:#284360; border-color:#284360; }
+.arcade-celebration { position:absolute; inset:0; overflow:hidden; pointer-events:none; opacity:0; }
+.arcade-celebration span { position:absolute; top:20%; color:#439e91; font-size:1.25rem; }
+.arcade-celebration span:nth-child(1) { left:10%; }.arcade-celebration span:nth-child(2) { left:30%; color:#d27f83; }.arcade-celebration span:nth-child(3) { left:50%; }.arcade-celebration span:nth-child(4) { left:70%; color:#d27f83; }.arcade-celebration span:nth-child(5) { left:88%; }
+.arcade-console.is-won .arcade-celebration { animation:game-confetti 1.6s ease-out 1 both; }
+@keyframes game-wiggle { 25% { transform:translateX(-5px); } 75% { transform:translateX(5px); } }
+@keyframes game-confetti { 0% { opacity:0; transform:translateY(-30px); } 20% { opacity:1; } 100% { opacity:0; transform:translateY(110px) rotate(8deg); } }
+@media(max-width:680px) { .arcade-layout { grid-template-columns:1fr; gap:2rem; }.arcade-console { box-shadow:7px 7px 0 #d5a8a5; }.arcade-options { grid-template-columns:1fr; }.arcade-feedback { min-height:0; }.arcade-section { padding-block:4.5rem; } }
+@media(prefers-reduced-motion:reduce) { .arcade-console.is-won .arcade-celebration,.arcade-options button.is-miss { animation:none; } }
