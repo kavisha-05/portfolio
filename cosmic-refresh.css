@@ -23,20 +23,20 @@ body { background:#060a1c; }
 .hero-ring-one { box-shadow:0 0 32px rgba(74,181,255,.2); }.hero-ring-two { box-shadow:0 0 38px rgba(163,84,255,.3); }
 .cosmic-button { min-height:51px; }.cosmic-button.primary { background:linear-gradient(105deg,#72b7ff,#9a60fb 58%,#df70e9); color:#fff; border-color:#e1c5ff; box-shadow:0 0 25px rgba(153,93,255,.65),inset 0 1px 10px rgba(255,255,255,.3); }
 .cosmic-button.primary:hover { box-shadow:0 0 36px rgba(192,113,255,.8); }
-.overview-grid { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:stretch; background:#080e25; gap:1px; }
+.overview-grid { display:grid; grid-template-columns:1fr; background:#080e25; gap:1px; }
 .overview-grid>.section { min-width:0; padding:clamp(3rem,4vw,4.7rem) 0; border-top:1px solid rgba(150,140,255,.24); border-bottom:1px solid rgba(150,140,255,.24); }
 .overview-grid .section-shell { width:calc(100% - clamp(3rem,5vw,5rem)); }
 .overview-grid .section-title { font-size:clamp(2rem,2.6vw,2.9rem); }
 .overview-grid .section-head { display:block; margin-bottom:1.6rem; }
 .overview-grid .section-head>p { margin:1rem 0 0; font-size:.88rem; }
 .overview-grid .section-head::after { display:none; }
-.overview-grid .about-section { border-right:1px solid rgba(150,140,255,.28); background:radial-gradient(ellipse at 86% 18%,rgba(145,66,225,.38),transparent 48%),linear-gradient(140deg,#101833,#171039); }
+.overview-grid .about-section { background:radial-gradient(ellipse at 86% 18%,rgba(145,66,225,.38),transparent 48%),linear-gradient(140deg,#101833,#171039); }
 .overview-grid .skills-section { background:radial-gradient(ellipse at 90% 20%,rgba(27,180,230,.3),transparent 48%),linear-gradient(140deg,#09172d,#15204c 75%,#251242); }
-.overview-grid .about-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(110px,.47fr); gap:1.2rem; align-items:center; }
+.overview-grid .about-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(180px,.5fr); gap:2rem; align-items:center; }
 .overview-grid .about-copy>p:not(.section-kicker) { font-size:.87rem; line-height:1.65; }
-.overview-grid .about-portrait { min-height:220px; align-self:center; }
-.overview-grid .about-portrait img { width:min(190px,100%); height:auto; aspect-ratio:1; }
-.overview-grid .about-portrait::after { width:min(225px,105%); }
+.overview-grid .about-portrait { min-height:300px; align-self:center; }
+.overview-grid .about-portrait img { width:min(280px,100%); height:auto; aspect-ratio:1; }
+.overview-grid .about-portrait::after { width:min(320px,105%); }
 .overview-grid .portrait-caption { bottom:0; font-size:.48rem; white-space:nowrap; }
 .overview-grid .about-facts { gap:.5rem; margin-top:1.25rem; }
 .overview-grid .about-facts>span { min-width:0; flex:1 1 95px; padding:.6rem .65rem; }
