@@ -18,33 +18,48 @@
         item.setAttribute('aria-roledescription', 'diapositive');
         item.setAttribute('aria-label', `${index + 1} sur ${originals.length}`);
       });
-      const clones = originals.map(item => {
-        const clone = item.cloneNode(true);
-        clone.removeAttribute('data-carousel-item');
-        clone.classList.remove('depth-ready');
-        clone.removeAttribute('style');
-        clone.setAttribute('aria-hidden', 'true');
-        clone.inert = true;
-        track.append(clone);
-        return clone;
-      });
-      let userPaused = false, touching = false;
+      let userPaused = false, touching = false, active = 0;
       let inView = !('IntersectionObserver' in window);
-      let previousTime = null, touchTimer = 0, remainder = 0, lastReduced = reducedMotion.matches;
+      let touchTimer = 0, lastReduced = reducedMotion.matches;
+      const dots = originals.map((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', `Afficher les compétences à partir de la carte ${index + 1}`);
+        dot.addEventListener('click', () => { active = index; render(true); });
+        return dot;
+      });
+      status.replaceChildren(...dots);
+      const countVisible = () => innerWidth <= 680 ? 1 : innerWidth <= 900 ? 2 : 3;
+      function render(animate = false) {
+        const count = reducedMotion.matches ? originals.length : countVisible();
+        originals.forEach((_, position) => {
+          const item = originals[(active + position) % originals.length];
+          item.hidden = position >= count;
+          item.classList.remove('skill-arrive');
+          track.append(item);
+          if (animate && position < count && !reducedMotion.matches) {
+            item.style.setProperty('--skill-delay', `${position * 55}ms`);
+            requestAnimationFrame(() => item.classList.add('skill-arrive'));
+          }
+        });
+        dots.forEach((dot, index) => {
+          if (index === active) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+      }
       const sync = () => {
         const running = !reducedMotion.matches;
-        clones.forEach(clone => { clone.hidden = !running; });
         track.classList.toggle('is-continuous', running);
-        previous.hidden = running;
-        next.hidden = running;
-        status.hidden = true;
+        previous.hidden = false;
+        next.hidden = false;
+        status.hidden = !running;
         pause.hidden = !running;
         pause.textContent = userPaused ? 'Reprendre' : 'Pause';
         pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
         pause.setAttribute('aria-pressed', String(userPaused));
-        previousTime = null;
-        remainder = 0;
         track.scrollLeft = 0;
+        render();
       };
       pause.addEventListener('click', () => {
         userPaused = !userPaused;
@@ -52,37 +67,50 @@
         pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
         pause.setAttribute('aria-pressed', String(userPaused));
       });
+      let touchStart = null;
       track.addEventListener('pointerdown', event => {
         if (event.pointerType !== 'touch') return;
         clearTimeout(touchTimer);
         touching = true;
+        touchStart = event.clientX;
       });
-      const releaseTouch = () => { clearTimeout(touchTimer); touchTimer = setTimeout(() => { touching = false; }, 2500); };
+      const releaseTouch = event => {
+        if (touchStart !== null && event.type === 'pointerup' && Math.abs(event.clientX - touchStart) > 45 && !reducedMotion.matches) {
+          active = (active + (event.clientX < touchStart ? 1 : -1) + originals.length) % originals.length;
+          render(true);
+        }
+        touchStart = null;
+        clearTimeout(touchTimer);
+        touchTimer = setTimeout(() => { touching = false; }, 2500);
+      };
       track.addEventListener('pointerup', releaseTouch);
       track.addEventListener('pointercancel', releaseTouch);
-      previous.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * .75, behavior: 'auto' }));
-      next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * .75, behavior: 'auto' }));
+      previous.addEventListener('click', () => {
+        if (reducedMotion.matches) track.scrollBy({ left: -track.clientWidth * .75, behavior: 'auto' });
+        else { active = (active - 1 + originals.length) % originals.length; render(true); }
+      });
+      next.addEventListener('click', () => {
+        if (reducedMotion.matches) track.scrollBy({ left: track.clientWidth * .75, behavior: 'auto' });
+        else { active = (active + 1) % originals.length; render(true); }
+      });
+      track.addEventListener('keydown', event => {
+        if (reducedMotion.matches || event.target !== track || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        active = (active + (event.key === 'ArrowRight' ? 1 : -1) + originals.length) % originals.length;
+        render(true);
+      });
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(entries => { inView = entries.some(entry => entry.isIntersecting); }, { threshold: .15 }).observe(carousel);
       }
       reducedMotion.addEventListener?.('change', sync);
+      window.addEventListener('resize', () => render(), { passive:true });
       sync();
-      function tick(time) {
+      window.setInterval(() => {
         if (lastReduced !== reducedMotion.matches) { lastReduced = reducedMotion.matches; sync(); }
-        const canMove = !reducedMotion.matches && !userPaused && !touching && !track.contains(document.activeElement) && inView && !document.hidden;
-        if (canMove && previousTime !== null) {
-          const cycle = clones[0].getBoundingClientRect().left - originals[0].getBoundingClientRect().left;
-          if (cycle > 0) {
-            remainder += Math.min(time - previousTime, 50) * .035;
-            const advance = Math.floor(remainder);
-            if (advance) { track.scrollLeft += advance; remainder -= advance; }
-            if (track.scrollLeft >= cycle) track.scrollLeft -= cycle;
-          }
-        }
-        previousTime = canMove ? time : null;
-        requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+        if (reducedMotion.matches || userPaused || touching || carousel.contains(document.activeElement) || !inView || document.hidden) return;
+        active = (active + 1) % originals.length;
+        render(true);
+      }, 4200);
     }
 
     document.querySelectorAll('[data-carousel]').forEach(carousel => {
