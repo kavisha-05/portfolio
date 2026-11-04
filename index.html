@@ -14,9 +14,11 @@
   <link rel="stylesheet" href="cosmic-fx.css?v=20261104a">
   <link rel="stylesheet" href="cosmic-orbit.css?v=20261104c">
   <link rel="stylesheet" href="cosmic-refresh.css?v=20261104c">
+  <link rel="stylesheet" href="cosmic-immersive.css?v=20261104b">
   <script src="cosmic-interactions.js?v=20261104f" defer></script>
   <script src="cosmic-motion.js?v=20261104a" defer></script>
   <script src="cosmic-fx.js?v=20261104a" defer></script>
+  <script src="cosmic-immersive.js?v=20261104b" defer></script>
 </head>
 <body>
   <div class="reading-progress" aria-hidden="true"><span></span></div>
@@ -36,6 +38,9 @@
     <div class="side-bottom"><span>PORTFOLIO / 2026</span><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kavisha">in ↗</a></div>
   </aside>
   <main id="contenu" class="site-main">
+    <canvas class="space-canvas" aria-hidden="true"></canvas>
+    <div class="space-stream" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="cursor-aura" aria-hidden="true"></div>
     <section class="hero" id="accueil" aria-labelledby="hero-title">
       <div class="star-field" aria-hidden="true"></div><div class="hero-ring hero-ring-one" aria-hidden="true"></div><div class="hero-ring hero-ring-two" aria-hidden="true"></div>
       <div class="hero-inner">
@@ -52,14 +57,22 @@
           <div class="art-glow"></div><img src="images/ordinateur-code-neon.png" alt="" class="hero-laptop">
           <div class="orbit-line orbit-a"></div><div class="orbit-line orbit-b"></div>
           <div class="floating-code">&lt;/&gt;</div><div class="floating-stack"><span><i></i> Interface</span><span><i></i> API</span><span><i></i> Données</span></div>
+          <div class="holo-cube"><i></i><i></i><i></i></div>
         </div>
       </div>
       <a href="#apropos" class="scroll-cue" aria-label="Découvrir la suite">↓</a>
     </section>
+    <section class="portal-deck" aria-label="Explorer le portfolio">
+      <div class="portal-grid">
+        <a class="portal-card portal-projects" href="#projets"><span class="portal-icon" aria-hidden="true">⌘</span><span><small>01 / CRÉATIONS</small><strong>Explorer mes projets</strong><span>Découvrir les applications ↗</span></span><i aria-hidden="true">↗</i></a>
+        <a class="portal-card portal-skills" href="#competences"><span class="portal-icon" aria-hidden="true">✦</span><span><small>02 / TECHNOLOGIES</small><strong>Voir mes compétences</strong><span>De l’interface aux données ↗</span></span><i aria-hidden="true">↗</i></a>
+        <a class="portal-card portal-experience" href="#experiences"><span class="portal-icon" aria-hidden="true">◇</span><span><small>03 / PARCOURS</small><strong>Découvrir mes expériences</strong><span>Les projets en équipe ↗</span></span><i aria-hidden="true">↗</i></a>
+      </div>
+    </section>
     <div class="overview-grid">
     <section class="about-section section" id="apropos" aria-labelledby="about-title">
       <div class="section-shell about-layout">
-        <div class="about-copy reveal"><p class="section-kicker">À propos</p><h2 class="section-title" id="about-title">À propos <em>de moi</em></h2><p>En troisième année de licence informatique à l’Efrei, j’allie développement web et sensibilité produit.</p><p>Rigoureuse et curieuse, j’aime comprendre un besoin, travailler en équipe et contribuer à la création d’applications utiles. Mon échange académique à APU, en Malaisie, m’a permis de découvrir un autre environnement d’études.</p><p>Je recherche un stage de fin d’études de quatre mois à partir d’avril, dans le développement d’applications SaaS.</p><p><strong>Atouts :</strong> empathie, gestion du stress, curiosité, audace et motivation.</p><div class="about-facts"><span>✧ <b>Étudiante</b><small>Efrei · Villejuif</small></span><span>◇ <b>Échange</b><small>APU · Malaisie</small></span><span>⌘ <b>Développement</b><small>Web & applications</small></span></div></div>
+        <div class="about-copy reveal"><p class="section-kicker">À propos</p><h2 class="section-title" id="about-title">À propos <em>de moi</em></h2><p>Étudiante en troisième année de licence informatique à l’Efrei, j’allie développement web et sensibilité produit.</p><p>Je recherche un stage de fin d’études de quatre mois à partir d’avril, dans le développement d’applications SaaS.</p><details class="about-more"><summary>En savoir plus <span aria-hidden="true">↗</span></summary><p>Rigoureuse et curieuse, j’aime comprendre un besoin, travailler en équipe et contribuer à la création d’applications utiles. Mon échange académique à APU, en Malaisie, m’a permis de découvrir un autre environnement d’études.</p><p><strong>Atouts :</strong> empathie, gestion du stress, curiosité, audace et motivation.</p></details><div class="about-facts"><span>✧ <b>Étudiante</b><small>Efrei · Villejuif</small></span><span>◇ <b>Échange</b><small>APU · Malaisie</small></span><span>⌘ <b>Développement</b><small>Web & applications</small></span></div></div>
         <div class="about-portrait reveal"><div class="portrait-halo"></div><img src="images/photo.png" alt="Portrait de Kavisha Rubakanthan" width="343" height="459"><span class="portrait-caption">CRÉER · APPRENDRE · EXPLORER</span></div>
       </div>
     </section>
@@ -97,5 +110,6 @@
     <section class="contact-section section" id="contact" aria-labelledby="contact-title"><div class="section-shell contact-layout"><div class="contact-copy reveal"><p class="section-kicker">Contact</p><h2 class="section-title" id="contact-title">Créons quelque chose <em>ensemble.</em></h2><p>Vous cherchez une stagiaire en développement ou souhaitez échanger ? Je serais ravie de vous lire.</p><div class="contact-actions"><a class="cosmic-button primary" href="mailto:kavisha.rubakanthan@gmail.com">✉ &nbsp; Envoyer un message →</a><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="tel:+33761588701">07 61 58 87 01</a><a href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV ↓</a></div><a class="contact-email" href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a></div><div class="contact-visual" aria-hidden="true"><div class="contact-orbit"></div><img src="images/contact-neon-3d.png" alt=""></div></div></section>
     <footer class="footer"><p>© 2026 Kavisha Rubakanthan</p><a href="#accueil">Retour en haut ↑</a></footer>
   </main>
+  <div class="exploration-hud" aria-hidden="true"><span class="hud-dot"></span><span>EXPLORATION</span><b data-hud-label>Accueil</b><span data-hud-number>00 / 07</span></div>
 </body>
 </html>
