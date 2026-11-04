@@ -10,6 +10,8 @@
       frame = 0;
       card.style.removeProperty('--tilt-x');
       card.style.removeProperty('--tilt-y');
+      card.style.removeProperty('--pointer-x');
+      card.style.removeProperty('--pointer-y');
     };
     card.addEventListener('pointermove', event => {
       if (motion.matches || !finePointer.matches) return;
@@ -20,6 +22,8 @@
         const y = (event.clientY - bounds.top) / bounds.height - .5;
         card.style.setProperty('--tilt-x', `${(-y * 3).toFixed(2)}deg`);
         card.style.setProperty('--tilt-y', `${(x * 3).toFixed(2)}deg`);
+        card.style.setProperty('--pointer-x', `${((x + .5) * 100).toFixed(1)}%`);
+        card.style.setProperty('--pointer-y', `${((y + .5) * 100).toFixed(1)}%`);
         frame = 0;
       });
     }, { passive: true });
