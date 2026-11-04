@@ -6,9 +6,8 @@
       const track = carousel.querySelector('[data-carousel-track]');
       const previous = carousel.querySelector('[data-carousel-prev]');
       const next = carousel.querySelector('[data-carousel-next]');
-      const pause = carousel.querySelector('[data-carousel-pause]');
       const status = carousel.querySelector('[data-carousel-status]');
-      if (!track || !previous || !next || !pause) return;
+      if (!track || !previous || !next || !status) return;
       const originals = [...track.querySelectorAll('[data-carousel-item]')];
       if (!originals.length) return;
       carousel.setAttribute('role', 'region');
@@ -18,7 +17,7 @@
         item.setAttribute('aria-roledescription', 'diapositive');
         item.setAttribute('aria-label', `${index + 1} sur ${originals.length}`);
       });
-      let userPaused = false, touching = false, active = 0;
+      let touching = false, active = 0;
       let inView = !('IntersectionObserver' in window);
       let touchTimer = 0, lastReduced = reducedMotion.matches;
       const dots = originals.map((_, index) => {
@@ -30,9 +29,10 @@
         return dot;
       });
       status.replaceChildren(...dots);
-      const countVisible = () => innerWidth <= 680 ? 1 : innerWidth <= 900 ? 2 : 3;
+      const countVisible = () => track.clientWidth < 470 ? 1 : track.clientWidth < 850 ? 2 : 3;
       function render(animate = false) {
         const count = reducedMotion.matches ? originals.length : countVisible();
+        track.style.setProperty('--skill-columns', count);
         originals.forEach((_, position) => {
           const item = originals[(active + position) % originals.length];
           item.hidden = position >= count;
@@ -54,19 +54,9 @@
         previous.hidden = false;
         next.hidden = false;
         status.hidden = !running;
-        pause.hidden = !running;
-        pause.textContent = userPaused ? 'Reprendre' : 'Pause';
-        pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
-        pause.setAttribute('aria-pressed', String(userPaused));
         track.scrollLeft = 0;
         render();
       };
-      pause.addEventListener('click', () => {
-        userPaused = !userPaused;
-        pause.textContent = userPaused ? 'Reprendre' : 'Pause';
-        pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
-        pause.setAttribute('aria-pressed', String(userPaused));
-      });
       let touchStart = null;
       track.addEventListener('pointerdown', event => {
         if (event.pointerType !== 'touch') return;
@@ -107,7 +97,7 @@
       sync();
       window.setInterval(() => {
         if (lastReduced !== reducedMotion.matches) { lastReduced = reducedMotion.matches; sync(); }
-        if (reducedMotion.matches || userPaused || touching || carousel.contains(document.activeElement) || !inView || document.hidden) return;
+        if (reducedMotion.matches || touching || carousel.contains(document.activeElement) || !inView || document.hidden) return;
         active = (active + 1) % originals.length;
         render(true);
       }, 4200);

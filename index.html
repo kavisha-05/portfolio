@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="cosmic.css?v=20261104b">
   <link rel="stylesheet" href="cosmic-sections.css?v=20261104b">
   <link rel="stylesheet" href="cosmic-fx.css?v=20261104a">
-  <link rel="stylesheet" href="cosmic-orbit.css?v=20261104b">
-  <script src="cosmic-interactions.js?v=20261104d" defer></script>
+  <link rel="stylesheet" href="cosmic-orbit.css?v=20261104c">
+  <link rel="stylesheet" href="cosmic-refresh.css?v=20261104a">
+  <script src="cosmic-interactions.js?v=20261104f" defer></script>
   <script src="cosmic-motion.js?v=20261104a" defer></script>
   <script src="cosmic-fx.js?v=20261104a" defer></script>
 </head>
@@ -41,8 +42,9 @@
         <div class="hero-copy">
           <p class="hero-welcome"><span aria-hidden="true">✦</span> Bienvenue sur mon portfolio</p>
           <h1 id="hero-title">Kavisha<br><span>Rubakanthan</span></h1>
-          <p class="hero-role">Développeuse web · Licence informatique à l’Efrei</p>
-          <p class="hero-description">Étudiante en troisième année de licence informatique, je développe des applications web, de l’interface utilisateur aux services et aux données.</p>
+          <p class="hero-role">Développeuse web <span>✦</span> Licence informatique à l’Efrei</p>
+          <p class="hero-description">Je donne vie à des applications web, de l’interface aux services et aux données. Étudiante en troisième année de licence informatique.</p>
+          <div class="hero-expertise" aria-label="Domaines de développement"><span>✧ Interface</span><span>⌘ Développement web</span><span>◈ Données</span></div>
           <div class="hero-actions"><a class="cosmic-button primary" href="#projets">✧ &nbsp; Voir mes projets <span>→</span></a><a class="cosmic-button secondary" href="#contact">✉ &nbsp; Me contacter</a><a class="cv-link" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV ↓</a></div>
           <p class="hero-availability"><span></span>Stage de fin d’études · 4 mois à partir d’avril</p>
         </div>
@@ -54,6 +56,7 @@
       </div>
       <a href="#apropos" class="scroll-cue" aria-label="Découvrir la suite">↓</a>
     </section>
+    <div class="overview-grid">
     <section class="about-section section" id="apropos" aria-labelledby="about-title">
       <div class="section-shell about-layout">
         <div class="about-copy reveal"><p class="section-kicker">À propos</p><h2 class="section-title" id="about-title">À propos <em>de moi</em></h2><p>En troisième année de licence informatique à l’Efrei, j’allie développement web et sensibilité produit.</p><p>Rigoureuse et curieuse, j’aime comprendre un besoin, travailler en équipe et contribuer à la création d’applications utiles. Mon échange académique à APU, en Malaisie, m’a permis de découvrir un autre environnement d’études.</p><p>Je recherche un stage de fin d’études de quatre mois à partir d’avril, dans le développement d’applications SaaS.</p><p><strong>Atouts :</strong> empathie, gestion du stress, curiosité, audace et motivation.</p><div class="about-facts"><span>✧ <b>Étudiante</b><small>Efrei · Villejuif</small></span><span>◇ <b>Échange</b><small>APU · Malaisie</small></span><span>⌘ <b>Développement</b><small>Web & applications</small></span></div></div>
@@ -69,9 +72,10 @@
           <article class="skill-slide" data-carousel-item><span class="skill-icon">◈</span><p class="card-eyebrow">03 / DONNÉES</p><h3>Données & outils</h3><p>MySQL · Oracle Database · DBeaver · Git · GitLab · Jira</p></article>
           <article class="skill-slide" data-carousel-item><span class="skill-icon">⌁</span><p class="card-eyebrow">04 / ENVIRONNEMENT</p><h3>Environnement</h3><p>Unix / Linux · scripting Shell · méthode Agile</p></article>
         </div>
-        <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Compétences précédentes">←</button><div data-carousel-status aria-label="Pages de compétences"></div><button type="button" data-carousel-next aria-label="Compétences suivantes">→</button><button type="button" class="carousel-pause" data-carousel-pause hidden>Pause</button></div>
+        <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Compétences précédentes">←</button><div data-carousel-status aria-label="Pages de compétences"></div><button type="button" data-carousel-next aria-label="Compétences suivantes">→</button></div>
       </div>
     </div></section>
+    </div>
     <section class="experience-section section" id="experiences" aria-labelledby="experiences-title"><div class="section-shell"><div class="section-head reveal"><div><p class="section-kicker">Mon parcours</p><h2 class="section-title" id="experiences-title">Expériences <em>professionnelles</em></h2></div><p>Des projets concrets, en équipe et au plus près des besoins.</p></div>
       <div class="timeline">
         <article class="timeline-card reveal"><span class="timeline-date">15 juin 2026<br>6 semaines</span><div class="timeline-content"><p class="experience-label">✦ PROTOTYPE WEB</p><h3>RK Supermarket</h3><p>Un parcours click &amp; collect, du catalogue à la gestion des commandes.</p><div class="timeline-tags"><span>Vue.js</span><span>Node.js</span><span>Express</span><span>MySQL</span></div><details class="experience-details"><summary>Voir les missions <span aria-hidden="true">＋</span></summary><ul><li>Catalogue avec recherche et promotions, panier et choix d’un créneau de retrait.</li><li>Espace de gestion : produits, prix, stocks et alertes de réapprovisionnement.</li><li>Suivi des commandes de leur préparation à leur retrait, avec impression des tickets de commande.</li></ul></details><a href="/demos/rk/">Découvrir le prototype ↗</a></div></article>
