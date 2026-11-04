@@ -98,3 +98,24 @@ body { background:#060a1c; }
   .overview-grid .about-portrait img { width:min(245px,85%); }
   .timeline-card { min-height:0; }
 }
+
+/* Un fond spatial commun relie les sections sans bandes ni coupures. */
+.site-main {
+  background-color:#080f28;
+  background-image:
+    radial-gradient(ellipse 65% 7% at 83% 7%,rgba(123,55,231,.32),transparent 75%),
+    radial-gradient(ellipse 60% 8% at 20% 21%,rgba(55,121,205,.19),transparent 75%),
+    radial-gradient(ellipse 62% 8% at 83% 35%,rgba(99,58,205,.25),transparent 75%),
+    radial-gradient(ellipse 58% 8% at 15% 50%,rgba(28,144,188,.18),transparent 75%),
+    radial-gradient(ellipse 65% 8% at 82% 64%,rgba(191,60,155,.20),transparent 75%),
+    radial-gradient(ellipse 65% 9% at 20% 79%,rgba(56,111,199,.20),transparent 75%),
+    radial-gradient(ellipse 65% 8% at 86% 94%,rgba(154,58,187,.23),transparent 75%),
+    linear-gradient(150deg,#080e25,#101632 48%,#0b112b);
+}
+.site-main .hero,.site-main .section { background:transparent; border:0; }
+.overview-grid { background:transparent; gap:0; }
+.overview-grid>.section { border:0; }
+.skills-section::before { background:radial-gradient(ellipse 55% 45% at 84% 48%,rgba(38,174,211,.15),transparent 75%); }
+.projects-section::before { background:radial-gradient(ellipse 55% 45% at 85% 50%,rgba(194,73,184,.15),transparent 75%); }
+.contact-section::before { background:radial-gradient(ellipse 55% 45% at 82% 50%,rgba(128,74,219,.16),transparent 75%); }
+.footer { background:transparent; border-top-color:rgba(149,133,231,.12); }
