@@ -2,7 +2,94 @@
   function init() {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+    function initInfiniteSkills(carousel) {
+      const track = carousel.querySelector('[data-carousel-track]');
+      const previous = carousel.querySelector('[data-carousel-prev]');
+      const next = carousel.querySelector('[data-carousel-next]');
+      const pause = carousel.querySelector('[data-carousel-pause]');
+      const status = carousel.querySelector('[data-carousel-status]');
+      if (!track || !previous || !next || !pause) return;
+      const originals = [...track.querySelectorAll('[data-carousel-item]')];
+      if (!originals.length) return;
+      carousel.setAttribute('role', 'region');
+      carousel.setAttribute('aria-roledescription', 'carrousel');
+      originals.forEach((item, index) => {
+        item.setAttribute('role', 'group');
+        item.setAttribute('aria-roledescription', 'diapositive');
+        item.setAttribute('aria-label', `${index + 1} sur ${originals.length}`);
+      });
+      const clones = originals.map(item => {
+        const clone = item.cloneNode(true);
+        clone.removeAttribute('data-carousel-item');
+        clone.classList.remove('depth-ready');
+        clone.removeAttribute('style');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.inert = true;
+        track.append(clone);
+        return clone;
+      });
+      let userPaused = false, touching = false;
+      let inView = !('IntersectionObserver' in window);
+      let previousTime = null, touchTimer = 0, remainder = 0, lastReduced = reducedMotion.matches;
+      const sync = () => {
+        const running = !reducedMotion.matches;
+        clones.forEach(clone => { clone.hidden = !running; });
+        track.classList.toggle('is-continuous', running);
+        previous.hidden = running;
+        next.hidden = running;
+        status.hidden = true;
+        pause.hidden = !running;
+        pause.textContent = userPaused ? 'Reprendre' : 'Pause';
+        pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
+        pause.setAttribute('aria-pressed', String(userPaused));
+        previousTime = null;
+        remainder = 0;
+        track.scrollLeft = 0;
+      };
+      pause.addEventListener('click', () => {
+        userPaused = !userPaused;
+        pause.textContent = userPaused ? 'Reprendre' : 'Pause';
+        pause.setAttribute('aria-label', userPaused ? 'Reprendre le défilement des compétences' : 'Mettre en pause le défilement des compétences');
+        pause.setAttribute('aria-pressed', String(userPaused));
+      });
+      track.addEventListener('pointerdown', event => {
+        if (event.pointerType !== 'touch') return;
+        clearTimeout(touchTimer);
+        touching = true;
+      });
+      const releaseTouch = () => { clearTimeout(touchTimer); touchTimer = setTimeout(() => { touching = false; }, 2500); };
+      track.addEventListener('pointerup', releaseTouch);
+      track.addEventListener('pointercancel', releaseTouch);
+      previous.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * .75, behavior: 'auto' }));
+      next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * .75, behavior: 'auto' }));
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => { inView = entries.some(entry => entry.isIntersecting); }, { threshold: .15 }).observe(carousel);
+      }
+      reducedMotion.addEventListener?.('change', sync);
+      sync();
+      function tick(time) {
+        if (lastReduced !== reducedMotion.matches) { lastReduced = reducedMotion.matches; sync(); }
+        const canMove = !reducedMotion.matches && !userPaused && !touching && !track.contains(document.activeElement) && inView && !document.hidden;
+        if (canMove && previousTime !== null) {
+          const cycle = clones[0].getBoundingClientRect().left - originals[0].getBoundingClientRect().left;
+          if (cycle > 0) {
+            remainder += Math.min(time - previousTime, 50) * .035;
+            const advance = Math.floor(remainder);
+            if (advance) { track.scrollLeft += advance; remainder -= advance; }
+            if (track.scrollLeft >= cycle) track.scrollLeft -= cycle;
+          }
+        }
+        previousTime = canMove ? time : null;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
     document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      if (carousel.classList.contains('skills-carousel')) {
+        initInfiniteSkills(carousel);
+        return;
+      }
       const track = carousel.querySelector('[data-carousel-track]');
       const previous = carousel.querySelector('[data-carousel-prev]');
       const next = carousel.querySelector('[data-carousel-next]');
