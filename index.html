@@ -3,113 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio de Kavisha Rubakanthan, développeuse web et étudiante à l’Efrei : expériences, projets et compétences.">
+  <meta name="description" content="Portfolio de Kavisha Rubakanthan, développeuse web : projets, expériences et compétences.">
   <meta name="theme-color" content="#090d24">
   <title>Kavisha Rubakanthan — Développeuse web</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cosmic.css?v=20261104b">
-  <link rel="stylesheet" href="cosmic-sections.css?v=20261104b">
-  <link rel="stylesheet" href="cosmic-fx.css?v=20261104a">
-  <link rel="stylesheet" href="cosmic-orbit.css?v=20261104c">
-  <link rel="stylesheet" href="cosmic-refresh.css?v=20261104c">
-  <link rel="stylesheet" href="cosmic-immersive.css?v=20261104b">
-  <script src="cosmic-interactions.js?v=20261104f" defer></script>
-  <script src="cosmic-motion.js?v=20261104a" defer></script>
-  <script src="cosmic-fx.js?v=20261104a" defer></script>
-  <script src="cosmic-immersive.js?v=20261104b" defer></script>
+  <link rel="stylesheet" href="minimal.css">
+  <script src="minimal.js" defer></script>
 </head>
 <body>
-  <div class="reading-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <header class="mobile-header"><a class="mobile-brand" href="#accueil">KR<span>.</span></a><button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="side-nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button></header>
-  <aside class="sidebar" aria-label="Menu du portfolio">
-    <a class="cosmic-logo" href="#accueil" aria-label="Kavisha Rubakanthan, accueil"><span>KR</span><i aria-hidden="true"></i></a>
-    <nav class="side-nav" id="side-nav" aria-label="Navigation principale">
-      <a href="#accueil"><span aria-hidden="true">⌂</span>Accueil</a>
-      <a href="#apropos"><span aria-hidden="true">◇</span>À propos</a>
-      <a href="#competences"><span aria-hidden="true">✧</span>Compétences</a>
-      <a href="#experiences"><span aria-hidden="true">▣</span>Expériences</a>
-      <a href="#projets"><span aria-hidden="true">⌘</span>Projets</a>
-      <a href="#formation"><span aria-hidden="true">△</span>Formation</a>
-      <a href="#contact"><span aria-hidden="true">✉</span>Contact</a>
-    </nav>
-    <div class="side-bottom"><span>PORTFOLIO / 2026</span><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kavisha">in ↗</a></div>
-  </aside>
-  <main id="contenu" class="site-main">
-    <canvas class="space-canvas" aria-hidden="true"></canvas>
-    <div class="space-stream" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="cursor-aura" aria-hidden="true"></div>
-    <section class="hero" id="accueil" aria-labelledby="hero-title">
-      <div class="star-field" aria-hidden="true"></div><div class="hero-ring hero-ring-one" aria-hidden="true"></div><div class="hero-ring hero-ring-two" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="hero-welcome"><span aria-hidden="true">✦</span> Bienvenue sur mon portfolio</p>
-          <h1 id="hero-title">Kavisha<br><span>Rubakanthan</span></h1>
-          <p class="hero-role">Développeuse web <span>✦</span> Licence informatique à l’Efrei</p>
-          <p class="hero-description">Je donne vie à des applications web, de l’interface aux services et aux données. Étudiante en troisième année de licence informatique.</p>
-          <div class="hero-expertise" aria-label="Domaines de développement"><span>✧ Interface</span><span>⌘ Développement web</span><span>◈ Données</span></div>
-          <div class="hero-actions"><a class="cosmic-button primary" href="#projets">✧ &nbsp; Voir mes projets <span>→</span></a><a class="cosmic-button secondary" href="#contact">✉ &nbsp; Me contacter</a><a class="cv-link" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV ↓</a></div>
-          <p class="hero-availability"><span></span>Stage de fin d’études · 4 mois à partir d’avril</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-glow"></div><img src="images/ordinateur-code-neon.png" alt="" class="hero-laptop">
-          <div class="orbit-line orbit-a"></div><div class="orbit-line orbit-b"></div>
-          <div class="floating-code">&lt;/&gt;</div><div class="floating-stack"><span><i></i> Interface</span><span><i></i> API</span><span><i></i> Données</span></div>
-          <div class="holo-cube"><i></i><i></i><i></i></div>
-        </div>
-      </div>
-      <a href="#apropos" class="scroll-cue" aria-label="Découvrir la suite">↓</a>
-    </section>
-    <section class="portal-deck" aria-label="Explorer le portfolio">
-      <div class="portal-grid">
-        <a class="portal-card portal-projects" href="#projets"><span class="portal-icon" aria-hidden="true">⌘</span><span><small>01 / CRÉATIONS</small><strong>Explorer mes projets</strong><span>Découvrir les applications ↗</span></span><i aria-hidden="true">↗</i></a>
-        <a class="portal-card portal-skills" href="#competences"><span class="portal-icon" aria-hidden="true">✦</span><span><small>02 / TECHNOLOGIES</small><strong>Voir mes compétences</strong><span>De l’interface aux données ↗</span></span><i aria-hidden="true">↗</i></a>
-        <a class="portal-card portal-experience" href="#experiences"><span class="portal-icon" aria-hidden="true">◇</span><span><small>03 / PARCOURS</small><strong>Découvrir mes expériences</strong><span>Les projets en équipe ↗</span></span><i aria-hidden="true">↗</i></a>
-      </div>
-    </section>
-    <div class="overview-grid">
-    <section class="about-section section" id="apropos" aria-labelledby="about-title">
-      <div class="section-shell about-layout">
-        <div class="about-copy reveal"><p class="section-kicker">À propos</p><h2 class="section-title" id="about-title">À propos <em>de moi</em></h2><p>Étudiante en troisième année de licence informatique à l’Efrei, j’allie développement web et sensibilité produit.</p><p>Je recherche un stage de fin d’études de quatre mois à partir d’avril, dans le développement d’applications SaaS.</p><details class="about-more"><summary>En savoir plus <span aria-hidden="true">↗</span></summary><p>Rigoureuse et curieuse, j’aime comprendre un besoin, travailler en équipe et contribuer à la création d’applications utiles. Mon échange académique à APU, en Malaisie, m’a permis de découvrir un autre environnement d’études.</p><p><strong>Atouts :</strong> empathie, gestion du stress, curiosité, audace et motivation.</p></details><div class="about-facts"><span>✧ <b>Étudiante</b><small>Efrei · Villejuif</small></span><span>◇ <b>Échange</b><small>APU · Malaisie</small></span><span>⌘ <b>Développement</b><small>Web & applications</small></span></div></div>
-        <div class="about-portrait reveal"><div class="portrait-halo"></div><img src="images/photo.png" alt="Portrait de Kavisha Rubakanthan" width="343" height="459"><span class="portrait-caption">CRÉER · APPRENDRE · EXPLORER</span></div>
-      </div>
-    </section>
-    <section class="skills-section section" id="competences" aria-labelledby="skills-title"><div class="section-shell">
-      <div class="section-head reveal"><div><p class="section-kicker">Mes outils</p><h2 class="section-title" id="skills-title">Mes <em>compétences</em></h2></div><p>Des technologies pour construire des applications, de l’interface aux données.</p></div>
-      <div class="skills-carousel" data-carousel aria-label="Compétences techniques">
-        <div class="carousel-track" data-carousel-track tabindex="0">
-          <article class="skill-slide" data-carousel-item><span class="skill-icon">⌘</span><p class="card-eyebrow">01 / LANGAGES</p><h3>Langages</h3><p>TypeScript · JavaScript · Python · Dart · HTML · CSS / SCSS · SQL</p></article>
-          <article class="skill-slide" data-carousel-item><span class="skill-icon">✦</span><p class="card-eyebrow">02 / WEB</p><h3>Web & frameworks</h3><p>Angular · Node.js · Vue.js · Alpine.js · API REST · Flutter</p></article>
-          <article class="skill-slide" data-carousel-item><span class="skill-icon">◈</span><p class="card-eyebrow">03 / DONNÉES</p><h3>Données & outils</h3><p>MySQL · Oracle Database · DBeaver · Git · GitLab · Jira</p></article>
-          <article class="skill-slide" data-carousel-item><span class="skill-icon">⌁</span><p class="card-eyebrow">04 / ENVIRONNEMENT</p><h3>Environnement</h3><p>Unix / Linux · scripting Shell · méthode Agile</p></article>
-        </div>
-        <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Compétences précédentes">←</button><div data-carousel-status aria-label="Pages de compétences"></div><button type="button" data-carousel-next aria-label="Compétences suivantes">→</button></div>
-      </div>
-    </div></section>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#accueil" aria-label="Kavisha Rubakanthan, accueil">KR<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu"><span></span><span></span></button>
+      <nav id="navigation" class="navigation" aria-label="Navigation principale">
+        <a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#experiences">Expériences</a><a href="#formation">Formation</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cv" href="CV-Kavisha-Rubakanthan.pdf" download>Mon CV</a>
     </div>
-    <section class="experience-section section" id="experiences" aria-labelledby="experiences-title"><div class="section-shell"><div class="section-head reveal"><div><p class="section-kicker">Mon parcours</p><h2 class="section-title" id="experiences-title">Expériences <em>professionnelles</em></h2></div><p>Des projets concrets, en équipe et au plus près des besoins.</p></div>
-      <div class="timeline">
-        <article class="timeline-card reveal"><span class="timeline-date">15 juin 2026<br>6 semaines</span><div class="timeline-content"><p class="experience-label">✦ PROTOTYPE WEB</p><h3>RK Supermarket</h3><p>Un parcours click &amp; collect, du catalogue à la gestion des commandes.</p><div class="timeline-tags"><span>Vue.js</span><span>Node.js</span><span>Express</span><span>MySQL</span></div><details class="experience-details"><summary>Voir les missions <span aria-hidden="true">＋</span></summary><ul><li>Catalogue avec recherche et promotions, panier et choix d’un créneau de retrait.</li><li>Espace de gestion : produits, prix, stocks et alertes de réapprovisionnement.</li><li>Suivi des commandes de leur préparation à leur retrait, avec impression des tickets de commande.</li></ul></details><a href="/demos/rk/">Découvrir le prototype ↗</a></div></article>
-        <article class="timeline-card reveal"><span class="timeline-date">Avril – juin 2025<br>Paris</span><div class="timeline-content"><p class="experience-label">✦ APPLICATION MÉTIER</p><h3>Conseil National de l’Ordre des Médecins</h3><p>Développement au sein de l’équipe Synapse sur TENO et l’application Ordinal.</p><div class="timeline-tags"><span>Angular</span><span>TypeScript</span><span>Spring Boot</span><span>Oracle</span></div><details class="experience-details"><summary>Voir les missions <span aria-hidden="true">＋</span></summary><ul><li>Conception, intégration et correction de composants dynamiques Angular, TypeScript et SCSS avec PrimeNG et à partir de maquettes Figma.</li><li>Analyse de services Spring Boot et de requêtes SQL sur Oracle avec DBeaver.</li><li>Suivi de tickets Jira et participation aux merge requests sur GitLab.</li></ul></details></div></article>
-        <article class="timeline-card reveal"><span class="timeline-date">Juillet 2024<br>Le Blanc-Mesnil</span><div class="timeline-content"><p class="experience-label">✦ APPLICATION MOBILE</p><h3>VT Tech</h3><p>Une application mobile multiplateforme développée avec Dart et Flutter.</p><div class="timeline-tags"><span>Dart</span><span>Flutter</span><span>PDF interactifs</span></div><details class="experience-details"><summary>Voir les missions <span aria-hidden="true">＋</span></summary><ul><li>Implémentation d’un moteur de recherche.</li><li>Intégration de packages pour le rendu et la manipulation dynamique de documents PDF interactifs.</li></ul></details></div></article>
+  </header>
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero-stars" aria-hidden="true"></div>
+      <div class="shell hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="availability-dot" aria-hidden="true"></span>Développeuse web · Efrei</p>
+          <h1 id="hero-title">Kavisha<br><span>Rubakanthan.</span></h1>
+          <p class="hero-lead">Je conçois des expériences web modernes, de l’interface aux données.</p>
+          <p class="hero-description">J’aime transformer une idée en application utile, fluide et agréable à utiliser.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#projets">Voir mes projets</a><a class="button button-outline" href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV</a></div>
+          <p class="availability">À la recherche d’un stage en développement web</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="code-window"><div class="window-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>projet.js</span></div><div class="window-content"><p><span class="code-purple">const</span> projet = {</p><p class="indent">idée: <span class="code-blue">« utile »</span>,</p><p class="indent">interface: <span class="code-blue">« soignée »</span>,</p><p class="indent">données: <span class="code-blue">« organisées »</span></p><p>};</p><span class="window-cursor"></span></div></div>
+          <span class="orbit-spark spark-one"></span><span class="orbit-spark spark-two"></span>
+        </div>
+      </div>
+      <div class="shell hero-caption"><span>Interface · Web · Données</span><span>Portfolio 2026</span></div>
+    </section>
+
+    <section class="section about" id="apropos" aria-labelledby="about-title"><div class="shell about-layout">
+      <div class="about-photo reveal"><img src="images/photo.png" alt="Portrait de Kavisha Rubakanthan" width="343" height="459" loading="lazy"></div>
+      <div class="about-copy reveal"><p class="section-label">À propos</p><h2 id="about-title">Derrière le <em>code.</em></h2><p>Curieuse et rigoureuse, j’aime comprendre un besoin avant de construire une solution. Je m’intéresse autant à la clarté d’une interface qu’aux services qui la font fonctionner.</p><p>J’apprécie le travail en équipe et les projets qui me permettent d’apprendre, d’expérimenter et de créer des applications utiles.</p><a class="text-link" href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">Retrouve-moi sur LinkedIn</a></div>
+    </div></section>
+
+    <section class="section projects" id="projets" aria-labelledby="projects-title"><div class="shell">
+      <div class="section-heading reveal"><div><p class="section-label">En pratique</p><h2 id="projects-title">Mes <em>projets.</em></h2></div><p>Des idées concrètes, développées de l’interface jusqu’aux données.</p></div>
+      <div class="project-grid">
+        <article class="project-card featured reveal"><a class="project-image" href="/demos/rk/" aria-label="Ouvrir la démonstration RK Supermarket"><img src="images/apercu-rk.jpg" alt="Aperçu du prototype RK Supermarket" width="1280" height="720" loading="lazy"></a><div class="project-content"><p class="card-label">Prototype de stage</p><h3>RK Supermarket</h3><p>Une application de click &amp; collect pour faciliter la commande et la gestion d’une épicerie.</p><div class="tags"><span>Vue.js</span><span>Node.js</span><span>Express</span><span>MySQL</span></div><details><summary>Découvrir le projet</summary><p><strong>Le besoin :</strong> réunir le catalogue, la préparation des commandes et le suivi des stocks.</p><p><strong>Ma contribution :</strong> catalogue avec recherche et promotions, panier, choix du retrait, espace de gestion et tickets imprimables.</p><p><strong>La solution :</strong> une interface Vue.js reliée à une API Express et à une base MySQL dans le prototype.</p></details><div class="project-links"><a class="button button-primary" href="/demos/rk/">Voir la démo</a></div><p class="project-note">Données fictives, enregistrées dans ce navigateur ; aucune commande réelle.</p></div></article>
+        <article class="project-card reveal"><a class="project-image" href="https://streamflix-murex.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir StreamFlix"><img src="images/apercu-streamflix-reel.jpg" alt="Aperçu du site StreamFlix en ligne" width="1280" height="720" loading="lazy"></a><div class="project-content"><p class="card-label">Projet académique</p><h3>StreamFlix</h3><p>Un site de streaming avec catalogue de films et parcours d’achat simulé.</p><div class="tags"><span>PHP</span><span>PostgreSQL</span><span>API TMDB</span><span>MVC</span></div><details><summary>Découvrir le projet</summary><p><strong>Le besoin :</strong> proposer un catalogue de films consultable par genre.</p><p><strong>En équipe :</strong> construction d’une application PHP avec architecture MVC, catalogue, sessions et parcours d’achat simulé.</p><p><strong>La solution :</strong> récupérer les informations des films à partir de l’API TMDB.</p></details><div class="project-links"><a class="button button-primary" href="https://streamflix-murex.vercel.app/" target="_blank" rel="noopener noreferrer">Voir la démo</a><a class="text-link" href="https://github.com/kavisha-05/Projet-ChallengeWeb" target="_blank" rel="noopener noreferrer">Code GitHub</a></div><p class="project-note">Catalogue connecté à TMDB ; comptes et achats indisponibles dans la démo en ligne.</p></div></article>
+        <article class="project-card reveal"><div class="bike-visual" aria-hidden="true"><span class="bike-orbit"></span><span class="bike-icon">◌—◌</span><span>Interface · Mobilité</span></div><div class="project-content"><p class="card-label">Projet en équipe</p><h3>Vélos électriques</h3><p>Une interface responsive pour présenter une plateforme de mobilité électrique.</p><div class="tags"><span>JavaScript</span><span>Responsive</span><span>UX</span></div><details><summary>Découvrir le projet</summary><p><strong>Le besoin :</strong> imaginer une présentation claire des vélos et du parcours utilisateur.</p><p><strong>En équipe :</strong> modélisation de l’expérience, intégration front-end et adaptation aux écrans.</p><p>Une version complète de la démonstration n’est pas disponible pour le moment.</p></details></div></article>
       </div>
     </div></section>
-    <section class="projects-section section" id="projets" aria-labelledby="projects-title"><div class="section-shell"><div class="section-head reveal"><div><p class="section-kicker">En pratique</p><h2 class="section-title" id="projects-title">Mes <em>projets</em></h2></div><p>Découvrez quelques applications et interfaces que j’ai réalisées.</p></div>
-      <div class="project-carousel" data-carousel aria-label="Projets">
-        <div class="carousel-track" data-carousel-track tabindex="0">
-          <article class="project-card" data-carousel-item><a class="project-image" href="/demos/rk/" aria-label="Voir la démonstration RK Supermarket"><img src="images/apercu-rk.jpg" alt="Aperçu de la démonstration RK Supermarket" loading="lazy"></a><div class="project-body"><p class="card-eyebrow">PROTOTYPE DE STAGE</p><h3>RK Supermarket</h3><p>Une application pour gérer le catalogue, les stocks et le suivi des commandes d’une épicerie.</p><div class="project-tags"><span>Vue.js</span><span>Node.js</span><span>MySQL</span></div><a href="/demos/rk/">Essayer la démo ↗</a><p class="project-note">Données fictives enregistrées dans ce navigateur. Aucune commande réelle.</p></div></article>
-          <article class="project-card" data-carousel-item><a class="project-image" href="https://streamflix-murex.vercel.app/" aria-label="Voir le projet StreamFlix"><img src="images/apercu-streamflix-reel.jpg" alt="Aperçu du site StreamFlix" loading="lazy"></a><div class="project-body"><p class="card-eyebrow">PROJET ACADÉMIQUE</p><h3>StreamFlix</h3><p>Site de streaming en PHP natif : architecture MVC, catalogue, sessions et simulation d’un parcours d’achat.</p><div class="project-tags"><span>PHP</span><span>PostgreSQL</span><span>API TMDB</span></div><a href="https://streamflix-murex.vercel.app/">Visiter StreamFlix ↗</a><p class="project-note">Catalogue connecté à TMDB ; comptes et achats indisponibles dans la démo en ligne.</p></div></article>
-          <article class="project-card text-project" data-carousel-item><div class="project-abstract" aria-hidden="true">↗<span>UX / INTERFACE</span></div><div class="project-body"><p class="card-eyebrow">PROJET EN ÉQUIPE</p><h3>Plateforme de vélos électriques</h3><p>Développement d’une interface responsive en JavaScript, modélisation de l’expérience utilisateur et intégration front-end.</p><div class="project-tags"><span>JavaScript</span><span>Responsive</span><span>UX</span></div></div></article>
-        </div><div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Projet précédent">←</button><div data-carousel-status aria-label="Pages de projets"></div><button type="button" data-carousel-next aria-label="Projet suivant">→</button></div>
-      </div>
-    </div></section>
-    <section class="story-section section" id="methode" aria-labelledby="story-title"><div class="section-shell"><div class="section-head reveal"><div><p class="section-kicker">Dans les coulisses</p><h2 class="section-title" id="story-title">De l’idée à <em>l’application.</em></h2></div><p>Projet à la loupe : RK Supermarket, du catalogue à la gestion.</p></div><div class="story-grid"><article class="story-card reveal"><span>01 / INTERFACE</span><h3>Une expérience claire</h3><p>Recherche de produits, promotions, panier et choix d’un créneau de retrait.</p><small>Vue.js</small></article><article class="story-card reveal"><span>02 / SERVICES</span><h3>Des fonctionnalités reliées</h3><p>Gestion des produits, des commandes et de leur suivi avec une API.</p><small>Node.js · Express</small></article><article class="story-card reveal"><span>03 / DONNÉES</span><h3>Des informations structurées</h3><p>Organisation des produits, des stocks et des commandes dans une base de données.</p><small>MySQL</small></article></div><a class="section-link" href="/demos/rk/">Explorer la démonstration ↗</a></div></section>
-    <section class="education-section section" id="formation" aria-labelledby="education-title"><div class="section-shell"><div class="section-head reveal"><div><p class="section-kicker">Mon apprentissage</p><h2 class="section-title" id="education-title">Formation <em>& ouverture</em></h2></div></div><div class="education-grid"><article class="education-card reveal"><h3>Licence informatique</h3><p>Efrei · Villejuif</p><p>Troisième année · Depuis septembre 2024</p></article><article class="education-card reveal"><h3>Échange académique</h3><p>APU · Malaisie · Deux mois, de fin avril à début juin 2026</p><p>Initiation à Power BI et à l’intelligence artificielle, avec un projet collectif autour d’un chatbot.</p></article><article class="education-card reveal"><h3>Baccalauréat général</h3><p>Lycée Jean Jaurès · Argenteuil</p><p>2023 · Spécialités NSI et mathématiques</p></article><article class="education-card reveal"><h3>Anglais</h3><p>Niveau B2 · TOEIC blanc : 895</p></article></div><p class="interests reveal"><strong>En dehors du code :</strong> Pilates, badminton à l’Efrei et lecture de livres de développement personnel.</p></div></section>
-    <section class="contact-section section" id="contact" aria-labelledby="contact-title"><div class="section-shell contact-layout"><div class="contact-copy reveal"><p class="section-kicker">Contact</p><h2 class="section-title" id="contact-title">Créons quelque chose <em>ensemble.</em></h2><p>Vous cherchez une stagiaire en développement ou souhaitez échanger ? Je serais ravie de vous lire.</p><div class="contact-actions"><a class="cosmic-button primary" href="mailto:kavisha.rubakanthan@gmail.com">✉ &nbsp; Envoyer un message →</a><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="tel:+33761588701">07 61 58 87 01</a><a href="CV-Kavisha-Rubakanthan.pdf" download>Télécharger mon CV ↓</a></div><a class="contact-email" href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a></div><div class="contact-visual" aria-hidden="true"><div class="contact-orbit"></div><img src="images/contact-neon-3d.png" alt=""></div></div></section>
-    <footer class="footer"><p>© 2026 Kavisha Rubakanthan</p><a href="#accueil">Retour en haut ↑</a></footer>
+
+    <section class="section skills" id="competences" aria-labelledby="skills-title"><div class="shell"><div class="section-heading reveal"><div><p class="section-label">Mes outils</p><h2 id="skills-title">Mes <em>compétences.</em></h2></div><p>Les technologies que j’utilise pour donner vie à mes idées.</p></div><div class="skills-grid">
+      <article class="skill-card reveal"><span class="skill-symbol" aria-hidden="true">{ }</span><h3>Langages</h3><p>JavaScript · TypeScript · Python · Dart · SQL</p></article>
+      <article class="skill-card reveal"><span class="skill-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Front-end</h3><p>HTML · CSS · SCSS · Angular · Vue.js</p></article>
+      <article class="skill-card reveal"><span class="skill-symbol" aria-hidden="true">◈</span><h3>Back-end &amp; données</h3><p>Node.js · Express · API REST · MySQL · Oracle</p></article>
+      <article class="skill-card reveal"><span class="skill-symbol" aria-hidden="true">⌘</span><h3>Outils &amp; méthodes</h3><p>Git · GitLab · DBeaver · Jira · Linux · Agile</p></article>
+    </div></div></section>
+
+    <section class="section experience" id="experiences" aria-labelledby="experience-title"><div class="shell"><div class="section-heading reveal"><div><p class="section-label">Mon parcours</p><h2 id="experience-title">Expériences <em>professionnelles.</em></h2></div><p>Apprendre, contribuer et construire en équipe.</p></div><div class="experience-list">
+      <article class="experience-card reveal"><div class="experience-date">Juin 2026<br>6 semaines</div><div><h3>RK Supermarket</h3><p>Conception d’un prototype web pour une épicerie : catalogue, stocks, commandes et tickets de retrait.</p><p class="experience-tech">Vue.js · Node.js · Express · MySQL</p></div></article>
+      <article class="experience-card reveal"><div class="experience-date">Avril à juin 2025<br>Paris</div><div><h3>Conseil National de l’Ordre des Médecins</h3><p>Au sein de l’équipe Synapse, contribution aux interfaces de l’application Ordinal : intégration et correction de composants à partir de maquettes, analyse de services et requêtes SQL.</p><p class="experience-tech">Angular · TypeScript · SCSS · Spring Boot · Oracle</p></div></article>
+      <article class="experience-card reveal"><div class="experience-date">Juillet 2024<br>Le Blanc-Mesnil</div><div><h3>VT Tech</h3><p>Stage sur une application mobile multiplateforme : moteur de recherche et intégration de documents PDF interactifs.</p><p class="experience-tech">Dart · Flutter</p></div></article>
+    </div></div></section>
+
+    <section class="section education" id="formation" aria-labelledby="education-title"><div class="shell education-layout"><div class="reveal"><p class="section-label">Mon apprentissage</p><h2 id="education-title">Formation &amp; <em>ouverture.</em></h2><p>Un parcours en informatique enrichi par une expérience à l’international.</p></div><div class="education-timeline reveal">
+      <article><p class="education-date">Depuis 2024 · 3e année</p><h3>Licence informatique</h3><p>Efrei · Villejuif</p></article>
+      <article><p class="education-date">Fin avril à début juin 2026</p><h3>Échange académique à APU</h3><p>Malaisie · Initiation à Power BI et à l’intelligence artificielle, avec un projet collectif autour d’un chatbot.</p></article>
+      <article><p class="education-date">2023</p><h3>Baccalauréat général</h3><p>Lycée Jean Jaurès · Spécialités NSI et mathématiques</p></article>
+      <article><p class="education-date">Langue</p><h3>Anglais · Niveau B2</h3><p>TOEIC blanc : 895</p></article>
+    </div></div></section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="shell contact-panel reveal"><div><p class="section-label">Contact</p><h2 id="contact-title">Créons quelque chose <em>ensemble.</em></h2><p>Une idée, une opportunité ou simplement envie d’échanger ? Je serais ravie de te lire.</p><a class="contact-email" href="mailto:kavisha.rubakanthan@gmail.com">kavisha.rubakanthan@gmail.com</a><div class="contact-actions"><a class="button button-primary" href="mailto:kavisha.rubakanthan@gmail.com">M’écrire</a><button class="button button-outline" id="copy-email" type="button">Copier mon adresse</button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div><div class="contact-links"><a href="https://www.linkedin.com/in/kavisha-r-2991b427a/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/kavisha-05" target="_blank" rel="noopener noreferrer">GitHub</a><a href="CV-Kavisha-Rubakanthan.pdf" download>Mon CV</a></div></div></section>
   </main>
-  <div class="exploration-hud" aria-hidden="true"><span class="hud-dot"></span><span>EXPLORATION</span><b data-hud-label>Accueil</b><span data-hud-number>00 / 07</span></div>
+  <footer class="footer"><div class="shell footer-inner"><p>© 2026 Kavisha Rubakanthan</p><a href="#accueil">Retour en haut</a></div></footer>
 </body>
 </html>
