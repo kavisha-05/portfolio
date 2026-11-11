@@ -97,7 +97,7 @@
       sync();
       window.setInterval(() => {
         if (lastReduced !== reducedMotion.matches) { lastReduced = reducedMotion.matches; sync(); }
-        if (reducedMotion.matches || touching || carousel.contains(document.activeElement) || !inView || document.hidden) return;
+        if (reducedMotion.matches || touching || carousel.classList.contains('skills-carousel') || carousel.contains(document.activeElement) || !inView || document.hidden) return;
         active = (active + 1) % originals.length;
         render(true);
       }, 4200);
